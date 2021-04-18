@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+<title>Tunkeutumistestaus -kurssin raportti</title>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" /> 
+<link rel="stylesheet" href="styles/styles.css">
+<script type="text/javascript" src="js/main.js"></script>
+</head>
+<body>
+    <div class="shadow">
+        <div class="dropdown">
+			<button onclick="showMenu()" class="dropbutton" >Navigointi</button>
+			<div id="dropDownNav" class="dropdown-content">
+				<a href="index.html">Pääsivu</a></li>
+				<a href="Tunkeutumistestaus_osa01.html">Harjoitus 1</a>
+				<a href="Tunkeutumistestaus_osa02.html">Harjoitus 2</a>
+				<a href="Tunkeutumistestaus_osa03.html">Harjoitus 3</a>
+			</div>
+		</div>
+   
+        <div class="content">
+            
+            <h1 class="hotsikko">Tunkeutumistestaus -kurssin raportti, osa 1</h1>
+
+            <div class="kuvaus">
+                <p>Tämä on tehtäväraportti Haaga-Helian Tunkeutumistestaus -kurssilta, missä tarkastelemme erilaisten järjestelmien tietoturvallisuutta ja
+                tarkastellaan miten hakkerit näkevät järjestelmän pyrkiessään tunkeutumaan niihin. </p>
+
+                <p><b>Raportin tekijä: Jyrki Aho</b></p>
+            </div>
+
+
+            <div class="tehtava">
+                <h1>Hanki kutsu HackTheBoxiin</h1>
+                <p>Onnistuin labratyön aikana hankkimaan kutsun hacktheboxiin. Konsolin kautta näin vihjeen javascript tiedostosta, mistä löysin komennon makeInviteCode -komennon. 
+                    Suoritin kyseisen komennon, joka oltiin kryptatty ROT13 menetelmällä. Tiesin mihin salaukseen järjestelmä tällöin perustui. Sain selvitettyä viestin sisällön ROT-13 sivujen
+                    kautta. Sivustolla pyydettiin lähettämään POST-kutsu osoitteeseen /api/invite/generate. Avasin selaimen konsolin ja kirjoitin sinne koodin</p>
+                    <div class="cscript">fetch("https://hackthebox.eu",{method:'post', header:{'Content-Type':'application/json'}}).then(res=>res.json()).then(console.log) </div>
+                    <p>Tämän seurauksena sain koodatun tekstinpätkän. Koodin pätkä näytti tutulta jostakin aikaisemmasta yhteydestä. Googlasin nopeasti koodin ja näin hakutekstien
+                    joukossa termin Base64. Etsin Googlella Base 64 kääntäjän ja sain koodin, minkä avulla pääsin kirjautumaan HackTheBoxiin.
+                </p>
+                
+                <div class="lahteet">
+                    <h2>Lähteet</h2>
+                    <p>Rot-13 sivu. Luettavissa: <a href="https://rot13.com/">https://rot13.com/</a>. Luettu: 2.4.2021.</p>
+                    <p>Base 64 Decode. Luettavissa <a href="https://www.base64decode.org/">https://www.base64decode.org/</a>. Luettu 2.4.2021,</p>
+                </div>
+
+            </div>
+
+            <div class="tehtava">
+                <h1>Kalin asennus</h1>
+                <p>Käytössä olevaan koneessani on käytössä 64-bittinen Ubuntu 20.04.2 LTS käyttöjärjestelmä. Olen 
+                jo aikaisemmin asentanut koneeseeni Ubuntu Softwaren kautta VirtualBoxin, joten sen asentamista minun ei tarvinnut suorittaa. 
+                Suoritettu alkutoimenpiteet Tero Karvisen Remote learning tools for Tero's Course ohjeen 
+                mukaisesti, paitsi että nimesin järjestelmän Kaliksi ja valitsin Oter Linux (64 bit). Näihin säätämisiin ja tarkistuksiin kului
+                noin 15 minuuttia.</p>
+
+                <p>Valittu Boot menusta <b>Start installer</b>, koska ajattelin samantien asentaa kyseisen Linuxin. Select a language -kohdassa
+                valitsin asennuskieleksi <b>englannin</b>. Select your location kohdassa valitsin <b>Continue</b>-painikkeilla painamalla kohdat 
+                <b>other->Europe->Finland</b>. Tämän jälkeen kysyttiin Configure locales, johon laitoin <b>United states - en_us.UTF-8</b>,
+                jonka jälkeen klikkasin <b>Continue</b>-painiketta. COnfigure the keyboard -valitsin kohdan <b>Finnish</b></p>
+
+                <p>Tämän jälkeen asennusohjelma rupesi raksuttaan ja latailemaan tietoja hetken aikaa. Latauksen jälkeen asennusohjelma
+                kysyi Configure the network, mihin kirjoitin Hostnameksi <b>LambdaK</b>. Tämän jälkeen ohjelma kysyi Domain name, mutta
+                jätin tämän kohdan tyhjäksi, koska tarkoitukseni ei ole pystyttää palvelinta. Oletan myös että tämän voi asettaa myöhemminkin, 
+                mikäli on pakko.Tämän jälkeen järjestelmä kysyi käyttäjän nimen, tunnuksen, salasanan ja salasanan vahvistuksen, jotka syötin järjestelmään.</p>
+
+                <p>
+                Järjestelmä kysyi tämän jälkeen Partition disk ja valitsin oletuskohdan <b>Guided - use entire disk</b>. Järjestelmä antoi tämän 
+                jälkeen yhden ainoan vaihtoehdon, joten klikkasin <b>Continue</b> -painiketta. Tämän jälkeen kysyttiin Partition schemeä, mihin asetin 
+                oletusarvon <b>All files in one partition (recommended for new users)</b>, koska en nähnyt syytä miksi minun olisi pitänyt erotella tiedostot
+                virtuaalikoneessa, jota aion käyttää kurssitöiden suorittamisessa. Muussa tapauksessa olisin valinnut toisen vaihtohehdon, eli <b>Separarate /home partition</b>. 
+                Näiden asetusten jälkeen järjestelmä näytti raportin asetetuista partition asetuksista. Valitsin kohdan 
+                <b>Finish partitioning and write changes to disk</b> ja painoin <b>Continue</b>-painiketta. Tämän jälkeen ohjelma kysyi haluanko kirjoittaa nämä
+                muutoksen kovalevylle ja valitsin kohdan <b>Yes</b>.  Tämän jälkeen ohjelmisto rupesi asentamaan uutta käytöjärjestelmää, mutta sitten kone yhtäkkiä jähmettyi.
+                Jouduin käynnistämään koneen uudellen, jotta pystyisin jatkamaan asennusta.</p> 
+
+                <p>Aloitin asennuksen alusta ja valitsin samat asetukset kuin äsken mainitsin. Kone raksutti tämän viimeisimmän asennuksen jälkeen
+                jonkin aikaa, kunnes pyysi konfiguroimaan pacakge managerin. Valitsin Use a Network mirror kohtaan <b>Yes</b>. Tämän jälkeen
+                Kali kyysi Http proxy information (blank or none), minkä jätin tyhjäksi ja jatkoin asennusta painamalla <b>Continue</b>-painiketta.</p>
+
+                <p>Näiden asennusten jälkeen asennusohjelma kysyi jos haluan asenta GRUB boot loaderin, johon vastasin <b>Yes</b>. 
+                Ohjelma ehdotti että valitsisin laitteen itse tai sitten valitsisin vaihtoehtoisen laitteen dev/sda. Valitsin että
+                kyseinen boot loader asennettaisiin tähän laitteeseen. Kone raksutti tämän jälkeen hekten aikaa, kunnes asennusohjelma kysyi haluanko viimeistellä 
+                asennukset. Painoin <b>Continue</b>-painiketta, jonka jälkeen ohjelma vielä raksutti hetken aikaa, minkä jälkeen virtuaalikone 
+                käynnisti itsensä uudestaan asennetussa Kali järjestelmässsä. Arvioisin tähän hommaan menneen noin kolme tuntia, mikä pääosin johtui siitä, että 
+                jouduin aloittamaan asennuksen alusta.</p>
+
+
+
+                <div class="lahteet">
+                    <h2>Lähteet</h2>
+                    <p>Karvinen, T., 2020. Remote Learning Tools for Tero's Courses. Luettavissa osoitteessa: 
+                        <a href="https://terokarvinen.com/2020/remote-learning-tools-for-my-courses/">https://terokarvinen.com/2020/remote-learning-tools-for-my-courses/</a>. 
+                        Luettu 31.3.2021</p>
+                </div>
+            </div>
+
+
+            <div class="tehtava">
+                <h1>OWASP</h1>
+
+
+
+                <h2>WebGoatin ja Webwolfin asennus</h2>
+                <p>Asennettu WebGoat Tero Karvisen sivujen ohjeiden mukaan. Webwolfin asentamisen kanssa oli 
+                ongelmia. Sain asennettua dockerin koneelle, mutta se kaatui virheilmoituksiin, kun yritin asentaa Webwolfia sen avulla. 
+                Havaitsin kuitenkin Percyn ohjeita selaamalla, että WebGoat ja WebWolf on asennettu samaan url-osoitteeseen 
+                jar-tiedostoina. Tämän vuoksi hain sitten kyseisen ohjelman komennolla</p>
+
+                <div class="cscript">wget https://github.com/WebGoat/WebGoat/releases/download/v8.0.0.M26/webwolf-8.9.9.M26.jar</div>
+
+                <p>Tämän jälkeen ensimmäisen testin, eli WebWolfin testaus toimi moitteettomasti. Eli kirjoitin 
+                osoitteekseni jyrkia@webgoat.org ja lähetin viestin. Kävin poimimassa Webwolfin sähköpostista koodin, jonka 
+                sitten sijoitin syöttökenttään ja vahvistin koodin oikeellisuuden. Jälkimmäinen webwolf testi pisti vähän 
+                mietityttämään, kun piti json tekstin joukosta löytää uniikki koodi. Oletin aluksi koodin olevan sessio-koodi, 
+                mutta kyseinen uniikki koodi oltiinkin piilotettu uri-osoitekentän parametrien joukkoon.</p>
+
+
+                <h2>HTTP Basics</h2>
+
+                <p>Lähdin suorittamaan WebGoatin ensimmäistä osiota. Ajattelin ladata Zapin Kali virtuaalikoneeseen, 
+                mutta totesinkin että kyseinen ohjelma löytyykin jo valmiiksi Kalista. Päivitin kyseisne ZAP paketin ajantasalle. 
+                Latasin Zapin oman sertifikaatin zap -hakemistoon. Tämän jälkeen menin Preferencesin kautta Firefoxin 
+                Privacy & Security välilehteen, jossa valitsin kohdan Certificates. Klikkasin View Certificates kohtaa ja 
+                importtasin kyseisen sertifikaatin kaikkine oikeuksineen Firefoxiin. Tämän jälkeen menin General välilehdelle ja 
+                menin Network setting kohtaan. Klikkasin Settings -painiketta ja laitoin pallon kohtaan Manual proxy configuration.
+                Määrittelin siellä HTTP proxyn osoitteeksi 127.0.0.1 ja asetin portin arvoksi 8090. Laitoin myös ruksin kohtaan 
+                "Also use this proxy for FTP and HTTPS". Klikkasin OK:ta ja yritin saada ZAP ohjelman nappaamaan 
+                GET ja POST lähetykset, mutta jostakin syystä kyseinen ohjelma ei napannut niitä ollenkaan. Yritin saada näitä ominaisuuksia
+                toimimaanja etsin internetistä tietoa, mutta en löytänyt mitään varteenotettavaa neuvoa ongelmaan. Havaitsin ZAPissa olevan
+                oman selainen, joten päätin kokeilla sen toimintaa ja klikkasin "Open the browser..." -painiketta. Tässä 
+                kyseisessä selaimessa GET ja POST lähetysten nappaaminen onnistui erinomaisesti. Ruudun täyttivät jatkuvat kutsut 
+                osoitteista</p>
+                <div class="cscript">http://localhost:8080/WebGoat/service/lessonprogress.mvc</div>
+                <div class="cscript">http://localhost:8080/WebGoat/service/lessoninfo.mvc</div>
+
+                <p>Excludasin nämä proxystä, jolloin niiden jatkuva virtaus loppui, jolloin oli helpompoi löytää osoitteiden</p>
+
+                <div class="cscript">http://localhost:8080/WebGoat/HttpBasic/attack1</div>
+                <div class="cscript">http://localhost:8080/WebGoat/HttpBasic/attac2</div>
+
+                <p>lähettämät kutsut ja niiden sisältö. Nappasin kutsun rakenteesta tiedon lähetystavasta (Post) ja 
+                taikanumeron arvon, jotka syötin ruutuihin ja painoin Go-painiketta. Tällöin ohjelma onnitteli onnistumisesta.</p>
+
+
+                <h2>Developer tools</h2>
+                <p>Ensimmäinen kohta oli helppo. Eli avasin selaimen konsolinäkymän painamalla <b>Ctrl+Shift+I</b>
+                -painikkeita, sekä kirjoitin sinne sivullaesiintyvän komennon webgoat.customjs.phoneHome(). Ohjelma 
+                palautti Javascript objektin, joka sisälsi tiedon onistumisesta, sekä phoneHome numeron arvon, joka 
+                oli syötettävä sivulla olevaan kenttään. </p>
+
+                <p>Tämän jälkeen siirryin sivulle kuusi suorittamaan seuraavaa tehtävää. Siellä haluttiin opettaa, miten 
+                selaimen avulla voidaan tarkastella HTTP kutsuja. Painoin <b>Ctrl+Shift+I</b>-painikkeita, jotta sain konsolin 
+                esille. Valitsin sieltä Networkin ja sieltä oikealta puolelta kohddan Request. Painoin <b>Go</b>-painiketta, 
+                jolloin sain napattu networkNum arvo.</p>
+
+
+                </h1>Osio A1</h1>
+                <h2>SQL Injection</h2>
+                <p>Sivulla kaksi oli suoritettava SQL kysely, missä on haettava työntekijä Bob Francon osaston 
+                nimi. Koska olen koodannut jonkin verran, niin osasin suoraan esittää kyselyn</p>
+
+                <div class="cscript">select department from employees where userid = 96134;</div>
+
+                <p>Sivulla kolme oli päivitettävä Tobi Barnettin osastoa. Yritin muuttaa osastoa komennolla
+                <div class="cscript">UPDATE employees SET department='Sales' WHERE userid=96134;</div>
+                mutta en onnistunut muuttamaan sitä. Tarkistin W3Schoolin sivuilta SQL-komennon, joka näytti olevan oikea. Tarkastelin
+                lauseketta uudestaan ja havaitsin, että yritin vahingossa muuttaa edellisessä tehtävässä mainitun 
+                Bob Francon osasto, enkä Tobi Barnettin. Vaihdoin käyttäjän id numeron oikeaksi ja sain tehtävän läpäistyä.</p>
+
+                <p>Sivulla neljä oli lisättävä taulukkoon puhelinnumero sarake. Koitin lisätä sarakkeen komennolla
+                <div class="cscript">alter employees add phone varchar(20);</div>
+                Järjestelmä ei hyväksynyt tätä, niin vilkaisin 3WSchoolin sivuilla olevaa Alter komentoa. Ilmeni
+                että olin unohtanut lisätä table -sanan alter sanan jälkeen. Kun lisäsin kyseisen sanan, niin järjestelmä
+                hyväksyi komennon. </p>
+
+                <p>Sivulla viisi oleva moduuli oli myös perus SQL -komentojen kyselyjä ja sain sen ensimmäisellä kerralla oikein,
+                kuin luin kysymyksen asettelun tarpeeksi huolellisesti. Eli läpäisin sen komennolla
+                <div class="cscript">grant alter table to 'UnauthorizedUser';</div>
+                </p>
+
+                <p>Sivulla yhdeksän piti suorittaa perinteinen injektio hyökkäys, missä katenoituun SQL-komentoon lisätään
+                ylimääräisiä merkkejä, joiden avulla saadaan haettua käyttäjistä tietoja. Itsellä meni ensimmäinen yritys pieleen,
+                koska teksitkentät oltiin sijoitettu oudosti keskelle kyselyä. Kun näki mihin kohtaan tekstikenttä sijoitti tekstit, 
+                niin seuraava yritys onnistui kun asetin <b>' or '1=1</b>.</p>
+
+                <p>Sivulla kymmennen koitin muurtautua järjestelmään asettamalla Login Count kenttään arvon 
+                <b>0 or login_count&lt;&gt;0</b> ja userid kenttään arvot <b>0 or userid&lt;&gt;0</b>, mutta järjestelmä 
+                ei hyväksynyt tätä vastausta. Koitin seuraavaksi testata murtautumista asettamalla Login count kenttään
+                arvon <b>0</b> ja User_id kenttään arvon <b>0 or userid!=0</b> ja tällöin sain tulostettua kaikki käyttäjät.</p>
+
+                <p>Sivulla yksitoista piti tehdä String hyökkäys, jonka tarkoituksena oli nähdä muiden myyntiosaston henkilöiden
+                Employee kentän arvoksi asetin <b>Smith</b> ja Authentication TAN arvoksi asetin <b>' or '1'='1</b>, jolloin 
+                pääsin murtautumaan suoraan järjestelmään.</p>
+
+                <p>Sivulla kaksitoista piti muuttaa Smithin palkkausta suuremmaksi. Palasin aikaisempaan tehtävään poimiakseni käyttäjien tiedot, jotta
+                voisin tehdä tarvittavat muutokset oikein. Eli kirjoitin Employee Name kohtaan <b>Smith</b> ja
+                Authentication TAN kohtaan <b>'; update table employees set salary=84000 where userid=37648;--</b>. Järjestelmä ei 
+                hyväksynyt tätä komentoa, mutta kun otin table sanan pois, niin sain muutettua Smithin palkan suurimmaksi.</p>
+
+                <p>Viimeisellä sivulla piti käydä poistamassa lokikirja, jotta Smith ei jäisi kiinnni tekemiensä muutosten vuoksi. Koska
+                en tiennyt miten tuon kyseisen kyselyn rakenne oltiin tehty, niin tein sellaisen hyökkkäyksen kuin <b>'; drop table access_log;--</b>,
+                joka toimi menestyksekkäästi. Tämän osion tekemiseen meni noin tunti, mutta toisaalta nämä hyökkäykset olivat vasta perustason hyökkäyksiä.</p>        
+
+                <div class="lahteet">
+                <h2>Lähteet</h2>
+
+                <p>Karvinen, T., 2020. Install Web goat 8 - Learn Web Pentesting. Luettavissa: 
+                <a href="https://terokarvinen.com/2020/install-webgoat-web-pentest-practice-target">https://terokarvinen.com/2020/install-webgoat-web-pentest-practice-target</a>. 
+                Luettu: 31.3.2021</p>
+
+                <p>Percy, E.C., 2020. Getting started with WebGoat and WebWolf using Jar. Luettavissa: 
+                    <a href="https://medium.com/@develouise/getting-started-with-webgoat-and-webwolf-using-jar-d06431883cc2">https://medium.com/@develouise/getting-started-with-webgoat-and-webwolf-using-jar-d06431883cc2</a>. 
+                    Luettu 31.3.2021.</p>
+
+
+                <p>W3School. 2020. SQL Uppdate Statement. Luettavissa: 
+                    <a href="https://www.w3schools.com/sql/sql_update.asp">https://www.w3schools.com/sql/sql_update.asp</a>. 
+                    Luettu: 1.4.2021.</p>
+
+                <p>W3School. SQL ALTER TABLE Statement. Luettavissa: 
+                    <a href="https://www.w3schools.com/sql/sql_alter.asp">https://www.w3schools.com/sql/sql_alter.asp</a>. 
+                    Luettu: 1.4.2021.</p>
+
+
+                <p>ZAP. 2020. Getting started. Luettavissa: 
+                    <a href="https://www.zaproxy.irg/docs/desktop/start/">https://www.zaproxy.irg/docs/desktop/start/</a>. 
+                    Liuettu 31.3.2021.</p>
+
+                </div>
+            </div>
+
+
+
+
+            <div class="tehtava">
+                <h1>Kali Linux työkalun kokeilu</h1>
+                <p>Päätin testata Legion työkalua, minkä vuoksi irroitin koneeni varmuuden vuoksi 
+                verkosta ennen kokeilua ja asensin kohde osoitteeksi 127.0.0.1. Kyseisen ohjelman skannaus löysi 
+                ainoastaan yhden avoimen portin 8080:n. En viitsinyt kokeilla ensialkuun muita työkaluja, koska ensin 
+                on selvitettävä mitä kyseiset työkalut tekevät.</p>
+            </div>
+            
+        </div>
+
+    </div>
+    
+</body>
+</html>

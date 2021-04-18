@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+<title>Tunkeutumistestaus -kurssin raportti</title>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" /> 
+<link rel="stylesheet" href="styles/styles.css">
+<script type="text/javascript" src="js/main.js"></script>
+</head>
+<body>
+    <div class="shadow">
+		<div class="dropdown">
+			<button onclick="showMenu()" class="dropbutton" >Navigointi</button>
+			<div id="dropDownNav" class="dropdown-content">
+				<a href="index.html">Pääsivu</a></li>
+				<a href="Tunkeutumistestaus_osa01.html">Harjoitus 1</a>
+				<a href="Tunkeutumistestaus_osa02.html">Harjoitus 2</a>
+				<a href="Tunkeutumistestaus_osa02.html">Harjoitus 3</a>
+			</div>
+		</div>
+		
+
+        <div class="content">
+            
+            <h1 class="hotsikko">Tunkeutumistestaus -kurssin raportti, osa 3</h1>
+
+            <div class="kuvaus">
+                <p>Tämä on tehtäväraportti Haaga-Helian Tunkeutumistestaus -kurssilta, missä tarkastelemme erilaisten järjestelmien tietoturvallisuutta ja
+                tarkastellaan miten hakkerit näkevät järjestelmän pyrkiessään tunkeutumaan niihin.
+				
+				
+			</p>
+
+                <p><b>Raportin tekijä: Jyrki Aho</b></p>
+            </div>
+
+
+            <div class="tehtava">
+                <h1>Sosiaalinen hyökkäys (Case tapaus)</h1>
+                <p>
+                    Kuten Rikun kalvoilta kävikin ilmi, niin suurin osa sosiaalista hyökkäystavoista vaikuttiolevan pishing -hyökkäyksiä. Mutta löysin lopulta pari kiinnostavaa tapausta aiheeseen liittyen. Ensimmäinen tapaus oliin esitelty Stuppin artikkelissa ja jota käsiteltiin myös Tessian artikkelissa. Kyseisessä sosiaalisessa hyökkäyksessä oltiin käytetty tekoälyllä varustettua ohjelmistoa, jonka avulla hyökkääjä muutti äänensä vastaamaan uhrin pomon ääntä ja näin onnistui vakuuttamaan uhrinsa rahansiirron tärkeydestä. Hyökkääjä soitti kolme erillistä puhelua ja kolmannella puhelulla hän yritti saada uhrin siirtämään uudestaan rahaa. Uhrin hälytyskellot alkoivat kuitenkin soida siinä vaiheessa, kun hän ei ollut saanut vahvistusta ensimmäisestä rahansiirrosta ja koska kolmas puhelu tuli yllättäen Itävallasta. Tämän seurauksena hyökkääjä ehti saamaan 220 000 €, jotka hän onistui siirtämään ajoissa pienempinä erinä muihin pankkeihin, josta ne siirrettiin edelleen muualle.               
+                </p>
+				
+				<p>
+					Viranomaisten mukaan tämä on ensimmäinen tekoälyllä suoritettu hyökkäys ja asiantuntijat arvelevat, että vastaavankaltaiset hyökkäykset tulevat jatkossa yleistymään. Vaihtoehtoisia tapoja tämän hyökkäyksen suoritukseen olisi tietenkin ollut olemassa, mutta äänen muuttaminen vastaamaan toista henkilöä oli aivan uudenlainen hyökkäys, mitä ei kukaan osannut ennakoida. Hyökkäyksen vakuuttavuutta lisää myös se, että uhriksi valittiin vanha työntekijä, joka tunsi pomonsa entuudestaan. Mikäli kyseessä olisi ollut uusi työntekijä, niin tälöin hyökkäys olisi ollut melko perinteinen vishing-hyökkäys. Toisaalta uudet työntekijät todennäköisesti koulutetaan tällaisia hyökkäyksiä varten, joten tämä hyökkäyskeino saattaa olla varsin tehokas kun se kohdistetaan vanhoihin työntekijöihin. Rikun kalvojen mukaan voitaisiin sanoa, että hyökkääjä vetosi tässsä tapauksessa johtoasemaan (Authority) ja kiireellisyyteen (Scarcity). Koska uhhriksi valittiin vanha työntekijä, niin todennäköisesti hyökkäyksessä käytettiin apuna myös yhteenkuuluvuuden tunnetta (Reciprocity). Hyökkäyksen torjuntakeinoina voidaan käyttää koulutusta ja ohjeistusta, että vaikka esimiehillä ja rahansiirroilla olisi kuinka kiire, niin rahansiirrot on vahvistettava erikseen. Toisin sanoen takaisin soitolla rahansiirron lähettäjälle ja mahdollisesti soitolla myös rahansiirron pyytäjän esimiehelle tai vastaavalle taholle, joka voi vahvistaa rahansiirron tarpeellisuuden. Työntekijä onnistui tässä tapauksessa rajoittamaan hyökkäyksen vaikutuksen toimimalla ammattimaisesti ja havainnoimalla muuttuvan puhelinnumeron ja reagoi tilanteeseen nopeasti.  
+				</p>
+				
+				
+				<p>
+					Toinen kiinnostava tapaus oli hieman vanhempi, joka esiteltiin Open Data Securityn artikkelissa ja josta oli Stephen Castlen artikkeli Indepencende lehdessä. Siinä hyökkääjä esiintyi toisena henkilönä usean vuoden ajan hankkien pankkityöntekijöiden luottamuksen luotettavana asiakkaana ja liikemiehenä. Hän onnistui saamaan uhrinsa pitämään (Liking) ja luottamaan itseensä (Reciprocity). Koska hän esiintyi pankin työntekijöille menestyvänä liikemiehenä, niin työntekijät tunsivat yhteneväisyyttä (Unity) ja uskomusta tekemisiinsä (Commitment & Consistency).  Hyökkääjä ei pyrkinyt luomaan kiireellisyyttä työntekijöihin, vaan odotti tilaisuuttansa iskeä. Eräänä päivänä pankin työntekijät tarjosivat hyökkääjälle pääsyn timanteilla varustettuun tallelokeroon, jolloin hyökkääjä käytti tilaisuutta hyväksi ja suoritti 21 miljoonan euron koruvarkauden vai pitäisikö sanoa timanttivarkauden. Tämä varkaus onnistui siitäkin huolimatta, vaikka tilat oltiin suojattu noin miljoonan euron arvoisilla turvalaitteilla. 
+				</p>
+				
+				<p>
+					Analysoinkin jo hieman Rikun oppien mukaan tätä tapausta. Hyökkäys olisi tietenkin voinut olla hieman suorasukaisempi, mutta en usko että se olisi tuottanut näin hyvää tuottoa kuin tässä tapauksessa, missä hyökkääjä esiintyi timanttienvälittäjänä. Pankin pitäisi säänöllisin väliajoin tarkistaa tilien tai passien oikeellisuus, jotta henkilöt eivät voisi avata tilejä väärillä passeilla. Lisäksi jos henkilöille annetaan kortit, joiden avulla he voivat jättää timantteja yön yli tallelokeroon, niin kyseiset avainkortit pitäisi ohjelmoida joka kerta erikseen, jotta kukaan ei voisi kopioida niitä käydessään holvissa. Toisin sanoen kortin numerosarja ja pin -numero muutettaisiin jokainen kerta, kun henkilö jättää jotakin tallelokeroon. Tällöin ainoa keino tunkeutua muiden henkilöiden tallelokeroon vaatisi fyysistä tunkeutumista tai brute force -menetelmää. Lisäksi kun joku henkilö on tällaisessa holvissa, niin hänen tekemisiään pitäisi seurata reaaliaikaisesti. Toisaalta ueimmissa pankkiholveissa ei ole kameroita mahdollisesti juuri sen vuoksi, ettei paljastettaisi liikaa holvin sisäisestä rakenteesta mahdollisen tietomurron yhteydessä. 
+				</p>
+                
+                <div class="lahteet">
+                    <h2>Lähteet</h2>
+                    <p>Open Data Security, 2017. The Most Famous Cases of Social Engineering. Luettavissa: <a href="https://opendatasecurity.co.uk/the-most-famous-cases-of-social-engineering/">https://opendatasecurity.co.uk/the-most-famous-cases-of-social-engineering/</a>. Luettu 17.14.2021.</p>
+					<p>Castle, S., 2007. Thief woos bank staff with chocolates - then steals diamonds worth £14m, Luettavissa <a href="https://www.independent.co.uk/news/world/europe/thief-woos-bank-staff-chocolates-then-steals-diamonds-worth-163-14m-5332414.html">https://www.independent.co.uk/news/world/europe/thief-woos-bank-staff-chocolates-then-steals-diamonds-worth-163-14m-5332414.html</a>. Luettu: 17.4.2021.
+					</p>
+                    <p>Tessian, 2020. 6 Social Engineering Examples: Real-World Attacks. Luettavissa: <a href="https://www.tessian.com/blog/examples-of-social-engineering-attacks/">https://www.tessian.com/blog/examples-of-social-engineering-attacks/</a>. Luettu: 17.4.2021.</p>
+					<p>
+						Stupp, C., 2019. Fraudsters Used AI to Mimic CEO’s Voice in Unusual Cybercrime Case. Luettavissa: <a href="https://www.wsj.com/articles/fraudsters-use-ai-to-mimic-ceos-voice-in-unusual-cybercrime-case-11567157402">https://www.wsj.com/articles/fraudsters-use-ai-to-mimic-ceos-voice-in-unusual-cybercrime-case-11567157402</a>. Luettu: 17.4.2021.
+					</p>
+                </div>
+
+            </div>
+			
+			<div class="tehtava">
+                <h1>Tiivistelmä Rikun lähteistä</h1>
+                <p>
+					<ul>
+						<li>Tarkastelemalla OSINT Techniques -sivustoa, niin oli yllätys kuinka monesta paikasta henkilöstä voi hakea tietoja ja että Youtube -videoiden metatietoihin jää sijainti ylös. Olin olettanut että Youtube automaattisesti siivoaisi nämä tiedot pois, kun järjestelmä pakkaa näitä videoita. Näitä työkaluja käyttämällä pystyy varmasti selvittämään missä mahdollinen uhri viettää aikaa.</li>
+						<li>dnstwist -työkalun avulla pystyy paljastastamaan ne domain nimet, jota muistuttavat esimerkiksi yrityksen domain nimeä. Tällä tavalla pystyy paljastamaan mahdolliset potentiaaliset  hyökkäykset, jotka kohdistuvat yritykseesi tai yrityksen asiakkaita kohtaan. Webbisivulla on hyvä esimerkki siitä kuinka moni hyökkäys kohdistuu githubia kohtaan. Vaikuttaa erinomaiselta työkalulta paljastaa potentiaaliset pishing hyökkäykset.</li>
+						<li>
+							Foca -työkaluna vaikutti mielenkiintoiselta, koska se mahdollistaa dokumenttien analysoinnin, minkä lisäksi se etsii internetistä kaikki muut dokumentit, jotka kyseinen henkilö tai tiimi ovat tehneet. Kun tarkemmin ryhtyy miettimään, niin tämähän on oleellinen osa taustatyötä, koska siten löytää uhriin liittyvät läheiset henkilöt, joita voi mahdollisesti käyttää "apuna" hyökättäessä kohteeseen. Tällöin voi puhua esimerkiksi henkilöitä nimeltä ja esiintyen siten kuin tuntisi heidät. Myös mahdolliset henkilön ajatukset ja ideologiat voivat paljastua tutkittaessa dokumentteja, jolloin hyökkäyksessä voidaan käyttää tehokkaammin apuna reciprocity ja unity -ideologiaa. 
+						</li>
+					</ul>
+                </p>
+				
+				
+
+				
+                
+                <div class="lahteet">
+                    <h2>Lähteet</h2>
+                    <p>OSINT Techniques - <a href="https://www.osinttechniques.com/">https://www.osinttechniques.com/</a></p>
+                    <p>DNS Twist (discover potential phishing domains) - <a href="https://github.com/elceef/dnstwist">https://github.com/elceef/dnstwist</a></p>
+					<p>FOCA (document metadata analysis) - <a href="https://www.elevenpaths.com/labstools/foca/index.html">https://www.elevenpaths.com/labstools/foca/index.html</a></p>
+                </div>
+
+            </div>
+
+
+			<div class="tehtava">
+                <h1>WebGoat hyökkäys (jatkoa...)</h1>
+				<h2>A2 Broken authentication: Authentication bypasses: 2 2FA Password Reset</h2>
+                <p>
+                    Koitin hyökätä kysymyslomakkeen kimppuun poistamalla secQuestions -parametrit ZAP-ohjelman avulla, kuten tekstissä mainittiin, mutta kyseinen hyökkäys ei toiminut. Katsoin ohjelman lähdekoodia ja havaitsin, että samalla sivulla oli myös form -lomake. Kokeilin muuttaa kyselylomakkeen samankaltaiseksi kuin salasanalomakkeen, mutta kyseinen hyökkäys ei näyttänyt toimivan tähän lomakkeeseen.
+				</p>
+					<img src="img/osa03_01.png" />
+                 <p>
+					Muutaman kokeilun jälkeen päätin etsiä netistä ohjeet tähän hyökkäykseen ja löysin Lim Jet Ween Youtube-kanavan, missä hänen hyökkäyksensä oli esitetty. Ilmeni että pelkästään parametrin nimeä muuttamalla hyökkäys onnistuu. Mietin miten tällaisen hyökkäyksen läpimeno on mahdollista ja eikö serveripäädyssä ohjelma yritä lukea juuri tietynnimisiä parametreja ja tarkistaa niiden arvot? Mutta pitää laittaa mieleen, että yksittäisen parametrin nimen muuttaminen saattaa sekoittaa ohjelman logiikan. Totesin myös että kun tämä hyökkäys toteutetaan ZAPissa, niin hyökkäys ei mene läpi. Tämän jälkeen siirryin käyttämään hyökkäystyökaluna <b>Burp Suite</b> -ohjelmaa, minkä jälkeen hyökkäys onnistui. Hieman jäi ihmetyttmään, miksi sama toimenpide ei toimi ZAPissa, mutta toimii Burpissa. Onko mahdollista ettei ZAPissa voi nykyisin muuttaa Headereita?
+                </p>
+				
+				
+				
+				<p>
+					Tämän jälkeen hyökkäsin kohti salasanojen resetointia kohti. Siellä sivulla neljä oli turvakysymykseen perustuva salasanan palauttaminen, joka oltiin suunniteltu siten, että käyttäjän olemassaolon pystyy selvittämään kyselyn perusteella. Kun käyttäjän olemassaolo on varmistettu, niin tämän jälkeen voi hyökätä käyttäjän turvakyselyä kohti. Kokeilin eri värivaihtoehtoja ja totesin Larryn turvasanan olevan Yellow,  Tomin turvasanaksi on purple ja adminin turvasana oli green. Tämän hyökkäyksen olisi mahdollisesti voinut suoritaa esimerkiksi Pythonilla tehdyn koodinpätkän avulla. Koska kyseessä oli kolme henkilöä ja oli selvitettävä mikä heidän salattu värinsä on, niin tilanne olisi ollut tällöin sama kuin olisi lyönyt lekalla kärpästä. Mikäli käyttäjiä olisi ollut useita, niin tällöin hyökkäyksen automatisointi olisi ollut tarpeen. Eli ensin oltaisiin testattu ohjelmallisesti kaikki mahdolliset käytttäjätunnukset käymällä läpi nimi, sukunimi ja syntymävuosi avaruus, jolloin oltaisiin saatu käytyä läpi iso osa käyttäjistä. Tämän jälkeen oltaisiin näitä käyttäjiä kohti voitu hyökätä käymällä läpi väriavaruus, joka puolestaan on huomattavasti pienempi avaruus. Tällä tavoin oltaisiin voitu löytää useita potentiaalisia hyökkäyskohteita. OWASP varuudessa todennäköisesti kaikkiin kohteisiin oltaisiin voitu hyökätä. Todellisessa elämässä mahdollisesti oltaisiin päästy käsiksi 70 - 80 % käyttäjän tiliin, olettaen että brute-force hyökkäystä ei oltaisi havaittu. Todellisuudessa tällainen hyökkäysmuoto olisi soittanut useitakin hälytyskelloja, minkä vuoksi hyökkääjän olsii mahdollisesti rajattava hyökkäys yleisimpiin nimiin ja hyökätä pitkän ajan kuluessa.
+				</p>
+				
+				
+				<p>	
+					Tämän jälkeen käytiin läpi salasanan turvakysymysten turvallisuutta ja mitä ongelmia erilaiset kysymykset sisältävät. Kaksi vaihtoehtoa piti valita, jotta tehtävä merkittäisiin suoritetuksi. Kokeilin ajokortin viisi viimeistä numeroa, missä todettiin ongelmaksi että ne voivat noudattaa jotakin tiettyä kaavaa. Myös ensimmäinen henkilö jota suuteli on huono, koska hyökkääjä voi kokeilla kaikkia tavallisimpia nimiä päästäkseen tiliin käsiksi. Kokeilin muitakin turvakysymyksiä ja ilmeni että yllättävän moneen kysymykseen voi löytää tiedon sosiaalisesta mediasta. Itse en olisi valinnut sellaista kysymystä kuin suosikkiopettajani kolmannella luokalla, koska suomalainen koulujärjestelmä on tämän suhteen yksinkertaisempi kuin muiden koulujärjestelmien. Itse eesimerkiksi muistan kolmannen luokan opetajan nimen ja uskaltaisin väittää löytäväni kyseisen nimen netistä. Vähnitään olisin voinut rajata opettajien nimiä etsimällä vanhoja tietoja koulusta ja sen opettajista. Tällaisen etsintä webistä ja eliminointiohjelman tekeminen tämän kysymyksen pohjalta saattaisi olla hauskan oloinen pienimuotoinen haaste.  
+				</p>
+				
+				<p>
+					Kokeilin lopuksi yrittää napata tomin salasanan, koska jokainen kerta kun tom saa viestin, niin hän vaihtaa salasanansa. Sivustolla mainittiin ettei console tai zap auta hyökkämisessä ja ehdotettiin curlia hyökkäystyökaluksi. Kokeilin kirjoittaa komentotulkkiin <b>curl --help</b> ja totesin etten ymmärrä miten sitä voitaisiin käyttää hyökkäystyökaluna. Etsin netistä ratkaisua tähän ongelmaan ja löysin sellaisen nimimerkin kuin Pen Tester 123. Nopeasti kelasin hänen ratkaisunsa läpi ja hän ei ollut käyttänyt curlia hyökkäystyökalunavaan Zap-ohjelmaa. Ajattelin itse kokeilla samaa hyökkäystapa myöhemmin ja jatkoin culr hyökkäyksen etsimistä, mutta en löytänyt sellaista ratkaisua missä sitä oltaisiin käytetty apuna. Eli tämä curl hyökkäyksen ajatus jäi minulta ainakin pimentoon. Eli kun käyttäjä unohtaa salasanansa, niin hän lähettää lomakkeen kautta sähköpostin, josta lähetetään sähköpostitse linkki, minkä avulla salasana voidaan vaihtaa. Kun lähetän tämän viestin omalle tililleni, niin viesti näyttää seuraavanlaiselta:
+				</p>
+				
+				<img src="img/osa03_02.png" />
+				
+				<p>
+					Viestissä oleva linkki johtaa alla olevan sivun näköiselle sivulle.
+				</p>
+				
+				<img src="img/osa03_03.png" />
+				
+				<p>
+					Kuten osoiterivistä näkyy, niin <b>reset-password</b>in jälkeen tulee uniikki merkkijono, joka todennäköisesti on vain tietyn aikaa voimassa. Koska kyseessä on uniikki ja satunnaiswen näköinen merkkijono, niin voidaan olettaa ettei brute force -menetelmä auta murtamaan tätä. Toisin sanoen meidän on jotenkin kyettävä ohjaamaan tämä saapuva linkki jollekin muulle sivulle.  Kuten sivustolla mainittiin, niin ZAP ei toimi tätä hyökkäystä suoritettaesssa. kokeilin varmuuden vuoksi ZAPia ja totesin että kyseistä ohjelmaa ei tosiaankaan voi käyttää hyökätessä. Tästä syystä käytin <b>Burp Suite</b> ohjelmaa hyökkäystä tehtäessä. Kirjoittamalla Hostiin osoitteen <b>127.0.0.1:9090</b> (kuvassa virhe tässä kohtaa), niin viestit ohjautuivat WebWolf palvelimen ja sitä kautta pääsin muuttamaan tomin salasanaa, ilman että tom sai tiedon tästä. 
+					
+				</p>
+				
+				<img src="img/osa03_04.png" />
+				
+				<h2>A2 Broken authentication: Secure Passwords: 4 How long could it take to brute force your password</h2>
+
+				<p>
+					Jos oikein ymmärsin, niin tämän moduulin tarkoituksena oli opettaa käyttäjille mitä voidaan pitää turvallisena salasanan. Ihmettelin vain ettei ohjelmaan suorittanut minkäänlaista sanakirjahyökkäystä. Kokeilin algoritmin toimintaa kirjoittamalla salasanaksi <b>MariKiviniemi</b>, jolloin ohjelma ilmoitti salasanan olevan vahva. Kokeilin kuitenkin huvikseni testata salasana -järjestelmää omalla arpomistavallani. Asetin salasanaksi <b>aidFet5Vbgkirksldor%.)oeighmcksja</b>, jonka lopputulos on nähtävissä seuraavassa kuvassa.					
+				</p>
+				
+				<img src="img/osa03_05.png" />
+					
+					
+				<h2>A3 Sensitive data exposure: Insecure Login: 2 Let's try</h2>
+				<p>
+					Onnistuin nappaan ZAP ohjelman avulla kirjautumisviestin sisältämän tunnuksen ja salasanan. Ajattelin tämän jälkeen kokeilla napata salasanan realistisemmalla vaihtoehdolla ja kokeilin Wiresharkilla, niin jostakin syystä kyseinen ohjelma ei napannut kyseisiä paketteja.Johtuisiko tämä siitä syystä, kun viestiliikenne kulkee koneen sisällä? Toinen vaihtoehto on, että minulla oli jotkin asetukset laitettu väärin. 
+				</p>
+				
+				<img src="img/osa03_06.png" />
+				
+				<h2>A7 Cross Site Scripting (XSS): Cross site scripting</h2>
+					
+				<p>
+					Seuraavaksi tarkastellaan WebGoatissa XSS -hyökkäyksiä. Kyseisellä hyökkäkysellä tarkoitetaan oman hyökkäävän koodin upottamista jollekin sivulle tai mainosohjelmalle, minkä kautta saadaan ujutettua haittakoodi ajettavaksi jonkun toisen henkilön selaimelle. Kun selain ajaa tämän haittakoodin, niin tämä voi mahdollistaa esimerkiksi toisen henkilön session kaappaamisen ja siten hyökkääjälle pääsyn kyseisen henkilön tilille kyseisessä palvelussa. Aluksi esiteltiin yksinkertainen javascript perusteinen XSS hyökkäys, jonka avulla voidaan ajaa koodia henkilön omalla koneella. Mutta tästä on kuitekin vielä vähän matkaa, ennen kuin koodi voidaan ajaa jonkuun muun koneella. Testatessani upottaa javascript koodia webbiselaimen osoitekenttään, niin totesin ettei webbiselaimet aja javascript koodia sieltä käsin. Tutkiessani askubuntun ja stackoverflown keskustelupalstoja, niin nykyisin nämä komennot on selaimissa automaattisesti estetty. Tosin nopean pikakoodin voi ajaa webbiselaimella, kun käyttää komentosarjaa <b>data:text/html,&lt;script&gt;koodi;&lt;/script&gt;</b>. Tällä tavalla voi yrittää ujuttaa jotakin haitallista käyttäjän koneelle, mutta koodinpätkä ei toisaalta saa olla liian pitkä, minkä lisäksi sivusto on ohjattava muualle, ettei käyttäjä huomaa hyökkäystä. Kokeilin kuitenkin komennon toimintaa selaimen consolin avulla, vaikka tiesinkin vastauksen etukäteen.
+				</p>
+				
+				<p>
+					Sivulla 7 oli etsittävä haavoittuvaisin kenttä mahdolliselle XSS hyökkäykselle. Klikkasin painiketta  Purchase, jolloin selain ilmoitti ostosten loppusumman ja miltä kortilta ostokset veloitettiin. Upotin tähän korttitiedon perään komennon <b>&le;script&gt;alert("hi");&lt;/scrip&gt;</b>, jolloin ohjelma veloitti normaalisti ja samalla nosti esille ponnahdusikkunan. 
+				</p>
+				
+					<img src="img/osa03_07.png" />
+				
+				<p>
+					Sivulla 10 olevan ohjeen avulla löysin javascript tiedoston <b>GoatRouter.js</b> ja sinne oli jäänyt sellainen testauskoodi kuin <b>webgoat.customjs.phoneHome("...")</b>. Tosin en ymmärtänyt mitä kyseinen ohjelma halusi saada vastaukseksi. Sivulla 11 tämä komento suoritettiin konsolissa ja kyseisen arvon piti sijoittaa kenttään, jolloin sen sai läpäistyä. Viimeisellä sivulla kyseltiin vastauksia XSS:tä joihin vastasin ja sain läpäistyä sen.
+				</p>
+
+                
+                <div class="lahteet">
+                    <h2>Lähteet</h2>
+                    <p> Lim Jet Wee, 2018. OWASP WebGoat 8 - Authentication Flaws - Authentication By pass - 2 FA Password Reset. Katsottavissa: <a href="https://www.youtube.com/watch?v=Og3vNKnUSac">https://www.youtube.com/watch?v=Og3vNKnUSac</a>. Katsottu 15.4.2021.</p>
+                    <p>Pen Tester 123, 2018. Owasp Webgoat 8 Solutions - Password Reset (Part 3 - Reset Password for Tom). Katsottavisa: <a href="https://www.youtube.com/watch?v=N48MgKxyefA">https://www.youtube.com/watch?v=N48MgKxyefA</a>. Katsottu: 15.4.2021. </p>
+                </div>
+				
+            </div>
+			
+			
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        </div>
+
+    </div>
+
+</body>
+</html>

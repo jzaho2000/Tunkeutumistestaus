@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+<title>Tunkeutumistestaus -kurssin raportti</title>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" /> 
+<link rel="stylesheet" href="styles/styles.css">
+<script type="text/javascript" src="js/main.js"></script>
+</head>
+<body>
+    <div class="shadow">
+		<div class="dropdown">
+			<button onclick="showMenu()" class="dropbutton" >Navigointi</button>
+			<div id="dropDownNav" class="dropdown-content">
+				<a href="index.html">Pääsivu</a></li>
+				<a href="Tunkeutumistestaus_osa01.html">Harjoitus 1</a>
+				<a href="Tunkeutumistestaus_osa02.html">Harjoitus 2</a>
+				<a href="Tunkeutumistestaus_osa03.html">Harjoitus 3</a>
+			</div>
+		</div>
+		
+
+        <div class="content">
+            
+            <h1 class="hotsikko">Tunkeutumistestaus -kurssin raportti, osa 2</h1>
+
+            <div class="kuvaus">
+                <p>Tämä on tehtäväraportti Haaga-Helian Tunkeutumistestaus -kurssilta, missä tarkastelemme erilaisten järjestelmien tietoturvallisuutta ja
+                tarkastellaan miten hakkerit näkevät järjestelmän pyrkiessään tunkeutumaan niihin. </p>
+
+                <p><b>Raportin tekijä: Jyrki Aho</b></p>
+            </div>
+
+
+            <div class="tehtava">
+                <h1>Artikkelin Hutchinsin ja kumppaneiden tappoketjun (Hutchins et al 2011) tarkastelu</h1>
+                <p>
+                    Tehtävänannossa pyydettiin lukemaan ja kirjaamaan muistiinpanot kyseisestä artikkelista. 
+
+                    <ul>
+                        <li>Perinteinen suojaus
+                            <ul>
+                                <li>Suojausjärjestelmät: Palomuuri, tunkeutumisen tunnistusjärjestelmät, dynaamiset vastatoimet ja antivirusohjelmat</li>
+                                <li>Ideologia:
+                                    <ul>
+                                        <li>Korjaus ja paikkaaminen tapahtuu kompromissin jälkeen</li>
+                                        <li>Kompromissi johtuu korjattavasta viasta</li>
+                                    </ul>
+                            </ul>
+                        </li>
+                        <li>APT (Advanced Persistent Threat)-luokan hyökkäykset
+                            <ul>
+                                <li>Perinteinen suojaus ei havaitse näitä hyökkäyksiä</li>
+                                <li>sisältävät edistyneitä hyökkäystapoja ja työkaluja
+                                    <ul>
+                                        <li>Social-Engineer -hyökkäykset</li>
+                                        <li>Troijalaiset</li>
+                                        <li>Nollapäivä -haavoittuvuudet</li>
+                                        <li>Kustomoidut haittaohjelmat (esim. Tuxnet)</li>
+                                    </ul>
+                                </li>
+                                <li>Yleisesti käytössä kybervakoilussa</li>
+                            </ul>
+
+                        </li>
+                        <li>Hutchinsin tappoketju
+                            <ul>
+                                <li>Analysointi- ja kuvausmenetelmä IT-uhille
+                                    <ul>
+                                        <li>Voidaan käyttää tapahtuneille tai potentaalisille hyökkäysten analysointiin</li>
+                                        <li>Kuvaa miten hyökkääjän on edettävä, jotta hän voi saavuttaa tavoitteensa.</li>
+                                        <li>Kehys lainattu Yhdysvaltain puolustusvoimilta, jotka käyttävät sitä uhkien havainnoinnissa ja arvioinnissa</li>
+                                        <li>Vastaavankaltainen lähestymistapa käytössä ABSAC -tietoturvakehyksessä, joka keskittyy enemmän uhan jälkeisiin vastatoimiin
+                                            kuin ennakoiviin toimiin.
+                                        <li></li>
+                                        </li>
+
+                                    </ul>
+                                </li>
+                                <li>Tarkastelee IT-järjestelmiin kohdistuvia tiedusteluja ja uhkia hyökkääjän näkökulmasta.</li>
+                                <li>Tämän mallin hyödyt järjestelmien ylläpitäjille
+                                    <ul>
+                                        <li>kehittää joustavat puolustuskeinot</li>
+                                        <li>Osaa priorisoida ja tehdä älykkäitä investointeja puolustusjärjestelmiin</li>
+                                        <li>OSaa kehittää prosesseja turvallisemmiksi</li>
+                                        <li>Jo yhden lenkin katkaiseminen saattaa torjua käynnissä olevan hyökkäyksen</li>
+
+                                    </ul>
+                                </li>
+                                <li>Voidaan luoda toimintamatriisi erilaisille uhille (katso lähteenä oleva artikkeli)</li>
+                                <li>Voidaan käyttää myös mittaustapana, kun tarkastellaan puolustusjärjestelmän tehokkuutta</li>
+
+                            </ul>
+                        </li>
+                        <li>Hutchisin tappoketjun malli
+                            <ul>
+                                <li>Tiedustelu
+                                    <ul>
+                                        <li>Kohteen valinta ja tiedon keruu</li>
+                                        <li>Tiedustelun lähteitä: konferenssijulkaisut, sähköpostilistat, sosiaaliset suhteet ja tiedot teknologiasta</li>
+                                    </ul>
+                                </li>
+                                <li>Aseistus
+                                    <ul>
+                                        <li>Hyökkäyksessä käytettävien välineiden valinta
+                                            <ul>
+                                                <li>Troijalaiset</li>
+                                                <li>Makrot</li>
+                                                <li>exploit -hyökkäystyökalut</li>
+                                                <li>jne.</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>Toimitus
+                                    <ul>
+                                        <li>Aseen siirto kohdeympäristöön</li>
+                                        <li>Yleensä sähköpostin liitetiedostot, verkkosivut ja USB -medialaitteet</li>
+                                    </ul>
+                                </li>
+                                <li>Hyödyntäminen
+                                    <ul>
+                                        <li>Jos ase on saatu toimitettua, niin käyttö laukaisee piilotetun koodin</li>
+                                        <li>Uhka kohdistuu yleensä sovellukseen tai käytössä olevaan käyttöjärjestelmään</li>
+                                        <li>Joissakin tapauksissa hyväksikäytetään käyttäjää itseään</li>
+                                    </ul>
+                                </li>
+                                <li>Asennus
+                                    <ul>
+                                        <li>Hyökkääjä saa jalansijan, mikäli troijalainen tai hyökkääjä saa asennettua takaportin järjestelmään</li>
+                                        <li>Sallii pysyvän pääsyn hyökkääjälle</li>
+                                    </ul>
+                                </li>
+                                <li>Komento ja hallinta
+                                    <ul>
+                                        <li>Yleensä vallattujen isäntälaitteiden on lähetettävä signaali hyökkäyksen onnistumisesta</li>
+                                    </ul>
+                                </li>
+                                <li>Tavoitteet
+                                    <ul>
+                                        <li>Mikäli nämä 6 aikaisempaa askelta ovat onnistuneet, niin hyökkääjä voi edetä maaliinsa</li>
+                                        <li>Maali yleensä datan keruu ja dekryptaus</li>
+                                        <li>Myös tietojen eheyden ja saatavuuden loukkaus voi olla mahdollinen kohde (CIA-kolmio)</li>
+                                        <li>Mahdollista myös, että hyökkääjä käyttää vallattua laitetta apuna jatkohyökkäyksiin.
+                                            <ul>
+                                                <li>Botnet</li>
+                                                <li>Hyökkäys yrityksen muihin järjestelmiin tietyltä koneelta käsin</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+
+                        </li>
+
+                        
+                        
+                        
+                        
+                      
+                        </ul>
+                    
+                </p>
+                
+                <div class="lahteet">
+                    <h2>Lähteet</h2>
+                    <p>Hutchins, E.M., Cloppert, M.J., in, R.H., 2011. Intelligence-Driven Computer Network Defense 
+                        Informed by Analysis of Adversary Campaigns and Intrusion Kill Chains. Luettavissa: 
+                        <a href="https://lockheedmartin.com/content/dam/lockheed-martin/rms/documents/cyber/LM-White-Paper-Intel-Driven-Defense.pdf">https://lockheedmartin.com/content/dam/lockheed-martin/rms/documents/cyber/LM-White-Paper-Intel-Driven-Defense.pdf</a>. 
+                        Luettu: 7.4.2021</p>
+                    <p></p>
+                </div>
+
+            </div>
+
+
+
+
+            <div class="tehtava">
+                <h1>Mastering metasploit -artikkeli</h1>
+                <p>Metasploitissa käytettävät termit:</p>
+                <ul>
+                    <li><b>Exploits:</b> Hyökkäyskoodi joka pyrkii käyttämään hyväksi vastapuolen haavoittuvuuksia</li>
+                    <li><b>Payload:</b> Koodinpätjä joka ajetaan kohdekoneessa, mikäli järjestelmään on päästy hyökkäämään haavoittuvuuden avulla</li>
+                    <li><b>Auxiliary:</b> Lisämoduuleja joiden avulla voi skannata, haistella ja kaikkea muuta</li>
+                    <li><b>Encoders:</b> Menetelmä jonka avulla tiedot muutetaan sellaiseen muotoon, ettei palomuuri tai antivirusohjelmat tunnista sitä</li>
+                    <li><b>Meterpreter:</b> Jonkinlainen siirrettävä ohjelma, jota ajetaan ainoastaan kohdekoneen muistissa (?)</li>
+                </ul>
+                <p>Metasploitin peruskomennot:</p>
+                    <ul>
+                        <li><b>help</b> tai <b>?</b>: lista kaikista komennoista</li>
+                        <li><b>set parametri arvo</b>: Aseta annetun parametrin arvoksi <b>arvo</b>.</li>
+                        <li><b>setg parametri arvo</b>: Asentaa parametrin arvon globaaliin käyttöön. Esim. hyökkäyskohteen IP-voidaan asettaa näin.</li>
+                        <li><b>show tyyppi</b>: Listaa saatavilla olevat mofiilit tyypeittäin (alla lueteltu tyypit)
+                            <ul>
+                                <li>exploits</li>
+                                <li>payloads</li>
+                                <li>plugins</li>
+                                <li>auxiliary</li>
+                                <li>post (???)</li>
+                                <li>nops (????)</li>
+                                <li>options</li>
+                            </ul>
+                        </li>
+                        <li><b>info tyypin_nimi</b>: Listaa tyypin tiedot</li>
+                        <li><b>search moduuli</b>: Etsii annetun moduulin</li>
+                        <li><b>check exploit</b>: Tarkista onko kohde haavoittuvainen tietylle hyökkäykselle</li>
+                        <li><b>use tyypin_nimi</b>: valitse tietty tyyppi käytettäväksi</li>
+                        <li><b>run</b>: Ajaa valitun auxiliriatyn</li>
+                        <li><b>exploit</b>: Ajaa valitun exploit paketin</li>
+                        <li><b>back</b>: Poista moduulin vallinta ja palaa alkuun</li>
+                        <li><b>sessions</b>: Listaa kaikki sessiot. Siirtyminen sessioon <b>sessions numerosarja</b></li>
+                    </ul>
+                    <p>
+                        Metasploitin kehys on hyvä valinta, koska se perustuu avoimeenlähdekoodiin ja sitä kehitetään aktiivisesti. Koska kyseinen 
+                        järjestelmä perustuu avoimeen lähdekoodiin, niin osaava henkilö voi muokata kyseisen järjestelmän omaan käyttöön sopivammaksi. 
+                        Metsaploit mahdollistaa nopean vaihdoksen payloadien välillä komennolla <b>set payload</b>. Siten shelliin perustuvasta sisäänpääsystä on helppo siirtyä 
+                        tarkempaan operatiiviseen toimintaan, kuten käyttäjän lisäämiseen. Metsploit poistuu hyökkäyskohteesta siistimmin, eikä yleensä kaada järjestelmiä. Tämä on 
+                        tärkeää, koska tällöin palvelimen ylläpitäjä ei pakosta huomaa, etttä järjestelmään ollaan tunkeuduttu. 
+                    </p>
+                    <p>
+                        Metasploitin tietokannan ja web serverin tilanteen näkee kirjoittamalla komennon <b>db_status</b>.
+                        Joskus saattaa tulla tarve hyödyntää muuta tietokantaa kuin Metsploitin tietokantaa, jolloin voidaan käyttää komentoa <b>db_connect -h</b>. 
+                        Kun aloittaa uuden tunkeutumistestauksen, niin on hyvä muodostaa uusi työalusta, jotta aikaisemmat tunkeutumistestausten datat eivät sekoittuisi. 
+                        Komennolla <b>workspace -h</b> näet käytössä olevat komennot uuden työtilan muodostamiseen. 
+                    </p>
+                    
+                    <div class="cscript"> </div>
+                    
+                </p>
+                
+                <div class="lahteet">
+                    <h2>Lähteet</h2>
+                    <p>Jaswal, N., 2020. Mastering Metasploit, 4th Edition. Chapter 1: Approaching a Penetration Test Using Metasploit. Luettavissa: 
+                        <a href="https://learning.oreilly.com/library/view/mastering-metasploit-/9781838980078/B15076_01_Final_ASB_ePub.xhtml#_idParaDest-30">https://learning.oreilly.com/library/view/mastering-metasploit-/9781838980078/B15076_01_Final_ASB_ePub.xhtml#_idParaDest-30</a>. 
+                        Luettu: 8.4.2020.
+
+                    </p>
+                    <p></p>
+                </div>
+
+            </div>
+
+
+
+
+
+            <div class="tehtava">
+                <h1>Metsploitable 2 -asennus</h1>
+                <p>
+                    Sain asennettua Metasploitable 2 koneen ilman ongelmia, mutta minulla oli hieman vaikeuksia saada Kalin ja Metasploitable2:n välisen yhteyden toimimaan. 
+                    Karvisen sivulta löytyi kuitenkin hyvä ohje, miten tämä sisäinen verkko saadaan toimimaan. Lisäksi otin Kalin pois NAT -verkosta, jotta kykenen testaamaan
+                    murtautumista, ilman että minun tarvitsee ottaa koneen pois verkosta. Tosin en meinannut heti saada Host-only adapteria toimimaan, ennen kuin huomasin
+                    että <b>Tiedosto</b> -palkin alta löytyi <b>Host Network Manager</b>, missä kävin lisäämässä uuden Hostin.</p>
+                <img src="img/osa02_01.png" />
+                
+                <p>
+                    Kun tämän jälkeen kun aktivoin Kalin ja Metasploitin, niin minun tarvitsi klikata <b>Asetukset</b>-painiketta ja siirtyä siellä <b>Verkko</b>-välilehdelle.
+                    Siellä valitsin oikean sovittimen (Kalissa Sovitin2 ja Metasploitissa Sovitin 1) ja asetin Liietty laitteeseen -kentän arvoksi <b>Host-only Adapter</b> ja nimeksi asetin
+                    ainoan tarjotun vaihtoehdon <b>vboxnet0</b>.</p>
+                <img src="img/osa02_02.png" />
+                <p>Kalin sovitin1 oltiin liitetty NATtiin. Tästä johtuen klikkasin <b>Advanced</b>-kohtaa ja otin ruksin pois kohdasta <b>Kaapeli liitetty</b></p>
+                <img src="img/osa02_03.png" />
+                <p>
+                    Käynnistin Metasploit 2:sen ja kirjauduin sisään järjestelmän oletussalasanoilla. Tämän jälkeen suoritin <b>ifconfig</b> -komennon,
+                    jolloin sain selvitettyä, että kyseisen laitteiston IP-osoite oli 192.168.56.101. Tämän jälkeen käynnistin Kali -käyttöjärjestelmän ja 
+                    kirjoitin komentotulkkiin komennon <b>ping 192.168.56.101</b>. Luulin että Kali ei löydä kyseistä IP-osoitetta, kun se jatkoi jatkuvalla syötöllä
+                    pingaamista. Painoin Ctrl+C yhdistelmää, jolloin havaitsin Kalin löytäneen kyseisen IP -osoitteen, mutta jostakin syystä se pingasi kyseistä osoitetta jatkuvalla 
+                    syötöllä. Oletan tämän olevan jonkinlainen ominaisuus, mutta sain kuitenkin varmistuksen verkon ja IP -osoitteen toimivuudesta.
+                </p>
+                <img src="img/osa02_04.png" />
+
+                    <div class="cscript"> </div>
+                    
+                </p>
+                
+                <div class="lahteet">
+                    <h2>Lähteet</h2>
+                    <p>Karvinen T., 2021.  Penetration Testing Course 2021 Spring. Luettavissa: 
+                        <a href="https://terokarvinen.com/2021/hakkerointi-kurssi-tunkeutumistestaus-ict4tn027-3005/">https://terokarvinen.com/2021/hakkerointi-kurssi-tunkeutumistestaus-ict4tn027-3005/</a>. 
+                        Luettu: 7.4.2021.
+                    </p>
+                    
+                </div>
+
+            </div>
+
+
+
+
+
+
+            <div class="tehtava">
+                <h1>Metasploitable 2 -hyökkäykset</h1>
+                <p>
+                    Käynnistin ohjelman komennolla msfconsole ja yritin käynnistää uuden työtilan komennolla <b>workspace -a testi</b>, mutta en saanut sitä käyntiin. Tarkastelin tämän jälkeen
+                    komennolla <b>db_status</b>, että tietokanta ei ollut päällä. Yritin käynnistää tietokantaa erilaisilla komennoilla, mutta en onnistunut. Kysyin sähköpostilla
+                    Tero Karviselta tästä ongelmasta, että pitääkö tietokannan oltava päällä jos aikoo ajaa metasploittia. Teron vastauksen avulla käynnistin tietokannan komennolla 
+                    <b>sudo msfdb init</b> ja tämän jälkeen käynnistin metasploitin komennolla <b>sudo msfconsole</b>. Tarkistin tietokannan tilan komennolla <b>db_status</b>, jolloin
+                    konsoli ilmoitti, että yhteys tietokantaan on luotu. Loin uuden työtilan komennolla <b>workspace -a testi01</b>. 
+                </p>    
+
+                <p>
+                    Skannataan aluksi serveriä <b>nmap</b>in avulla. Eli kirjoitan tällöin komennon <b>nmap -sV 192.168.56.101</b>, 
+                    minkä jälkeen kone ruksutti hetken aikaa ja palautti seuraavanlaiset tulokset.
+                </p>
+                <img src="img/osa02_05.png" />
+                <p>
+                    Karvisen vihjeen mukaan <b>ftp portti 21, vsftpd 2.3.4</b> on haavoittuvainen, joten aloitan testauksen sieltä, jotta saisin tuntumaa 
+                    tähän hyökkäystyökalun käyttöön. Kokeilin komentoja <b>hosts</b> ja <b>services</b>, mutta järjestelmä ei tallentanut aikaisemmin haettuja tietoja.
+                    Huomasin kuitenkin kurssimateriaalin kirjasta, että siellä käytettiinkin sellaista komentoa kuin <b>db_nmap -sV 192.168.56.101</b>. Kyseinen ohjelma
+                    haki samat tiedot. Tosin nyt kun kirjoitti komennot <b>hosts</b> ja <b>services</b>, niin ohjelma palautti aihemmin haetut tiedot.  Mikäli <b>db_nmap</b> komento ei o olisi vastannut, niin tällöin olisi voinut käyttää komentoa <b>db_nmap -sV -Pn 192.168.56.101</b>.  Suorittamalla komennon <b>db_nmap -Pn -p445 -script smb-os-discovery 192.168.56.101</b>  saadaan selvitettyä, että järjestelmässä on käytössä Unix Samba 3.0.20-Debian käyttöjärjestelmä. Tämän jälkeen suoritin komennon <b>db_nmap -Pn -p445 --script smb-vuln-ms17-010 192.168.56.101</b>, mutta järjestelmä ei löytänyt tätä komentoa suorittaessaan haavoittuvuuksia. Nyt lähdin hyökkäämään kohti luennolla esitettyä haavoittuvuutta vsftpd:tä kohti. Eli kirjoitin komennon <b>search vsftpd</b>, jolloin ohjelma esitti vain yhden käytettävän haavoittuvuuden. Valitsin sen komennolla <b>use 0</b>. Tämän jälkeen tarkistin hyökkäyskohteen kirjoittamalla komennon <b>show options</b>. Tämä kenttä oli tyhjä ja koska olin koko ajan hyökkäämäsä samaa kohdetta kohti, niin ajattelin asettaa IP-osoitteen globaaliksi arvoksi komennolla <b>setg RHOSTS 192.168.56.101</b>. Kirjoitin uudestaan komennon <b>show options</b> ja varmistin, että IP -osoite näkyy asetuksissa. Tämän jälkeen lähdin hyökkäämään kohti tätä haavoittuvuutta komennolla <b>exploit</b> ja onnistuin pääsemään sisälle, kuten kuvassa näkee.
+					<img src="img/osa02_06.png" />
+					Lopetin hyökkäyksen painamalla <b>Ctrl+Z</b> ja sen jälkeen hyväksyin, että sessio siirrettiin taka-alalle. Tämän jälkeen tapoin session komennolla <b>sessions -K</b>. Tämä saattoi olla yliampuva komento, koska se tappaa kaikki sessiot, mutta toisaalta minulla ei ollut muita sessioita juuri sillä hetkellä auki.
+                </p>
+				
+				<p>
+					Nyt kun tiedän mitä tavoitella, niin lähdin tarkastelemaan muita järjesdtelmän haavoittuvuuksia. Loin aluksi työpöytä <b>testi02</b> ja ajoin komennon <b>db_nmap</b> uudestaan. Komennolla <b>services</b> pääsin näkemään muut avonaiset portit, joita kohti voi hyökätä. Ajattelin lähteä tarkastelemaan näitä portteja yksitellen.  Valitsin hyökätä OpenSSH porttia kohti, jolloin kirjoitin <b>search OpenSSH</b> ja sen jälkeen komennon <b>use 0</b>.  Ajoin kyseisen hyökkäyksen <b>exploit</b> -komennolla ja lopputulos näytti mielestäni siltä, että ohjelma ajoi sen läpi, mutta ei onnistunut hyökkäyksessä. Asetin seuraavaksi käyttäjänimen järjestelmään kirjoittamalla komennon <b>set USERNAME root</b> ja ajoin hyökkäyksen uudestaan. Root -niminen käyttäjä löytyi, mutta hyökkäys ei onnistunut. Hyökkäykset 1, 3 ja 4 kohdistuivat Windows -järjestelmään ja koska käytössä oli Unix -järjestelmä, niin en uskonut kyseisten hyökkäysten toimivuuteen. Eli lähdin testaamaan vielä hyökkäystätapaa 2. Kirjoittamalla <b>show options</b>, näkee että minulla pitäisi olla sessio päällä, johon voisin viitata. Komento <b>exploit</b> johti virhetilanteeseen, joten päättelin että teen hyökkäyksen jotenkin väärin, tai sitten minulla pitäisi olla luotuna uusi sessio. En keksinyt miten voisin luoda uutta sessiota, joten oletan että tämä hyökkäystapa ei toimi.  Kokeilin useita eri metasploitin hyökkäyksiä järjestelmään, mutta oletettavasti minulla ei ole tarpeeksi tietoa näiden työkalujen ominaisuuksista. 
+				</p>
+				
+				
+				
+				<p>
+					Useiden kokeilujen jälkeen avasin Metasploitable 2:n exploitability guiden -sivuston. Siellä esitetty hyökkäys <b>rlogin -l root 192.168.56.101</b> portteja 512 -514 vastaan ei toiminut. Asensin myös tarvittavan paketin Kaliin, mutta silti hyökkäys tähän kohteeseen ei toiminut. Hyökkäystapa näytti kuitenkin hyvin yksinkertaiselta ja selkeältä, mutta kun hyökkäsin tällä tavalla, niin järjestelmä pyysi salasanoja. Hyökkäsin kuitenkin onistuneesti <b>ssh-keygen</b> -hyökkäyksen avulla ja <b>telnet</b> hyökkäyksen avulla. Selkeästi useimmat hyökkäystavat perustuvat takaovien hyödyntämiseen. En ainakaan itse löytänyt näitä työkaluja metasploit -paketista tai sitten en osannut käyttää kyseistä työkalua oikein. Jätin Webbihyökkäykset vääliin, koska niitä käydään OWASP osuudessa. Tosin ajattelin testata näitä webbihyökkäyksiä samanaikaisesti kun harjoittelen OWASPin kanssa, koska luulen hyökkäysten opiskelun olevan silloin monipuolista.
+				</p>
+
+                
+                <div class="lahteet">
+                    <h2>Lähteet</h2>
+					
+					<p>Jaswal, N., 2020. Mastering Metasploit, 4th Edition. Chapter 1: Approaching a Penetration Test Using Metasploit. Luettavissa: 
+                        <a href="https://learning.oreilly.com/library/view/mastering-metasploit-/9781838980078/B15076_01_Final_ASB_ePub.xhtml#_idParaDest-30">https://learning.oreilly.com/library/view/mastering-metasploit-/9781838980078/B15076_01_Final_ASB_ePub.xhtml#_idParaDest-30</a>. 
+                        Luettu: 8.4.2020.
+                    </p>
+					
+                    <p>Rapid 7, 2021. Metasploitable 2 Exploitability Guide. Luettavissa: <a href="https://docs.rapid7.com/metasploit/metasploitable-2-exploitability-guide">https://docs.rapid7.com/metasploit/metasploitable-2-exploitability-guide</a>. Luettu: 9.4.2021.</p>
+					
+					
+					
+					
+                </div>
+
+            </div>
+
+
+
+
+
+
+            <div class="tehtava">
+                <h1>Koneen asentaminen VulnHubista</h1>
+                <p>
+                    Asensin VirtualBoxiin ColddBoxEasy_IV koneen ja ajattelin yrittää murtautua tälle. Tosin järjestelmään ei voinut kirjautua suoraan sisälle, kunei annettu salasanaa, joten IP osoitteen selvittäminen oli ensimmäinen tehtävä. Kirjoitin komentotulkkiin komennon <b>sudo netdiscover -P</b>, jolloin löysin käynnissä olevan virtuaalikoneen IP-osoitteen <b>192.168.56.103</b>. Onnistuin porttiskannaamaan kyseisen osoitteen <b>nmap</b> komennon avulla ja havaitsin, että portit 80 ja 4512 olivat auki. Koska 80 viittaa webbisivulle, niin kirjauduin kyseiselle sivustolle, jolloin paljastui että kyseesä on Wordpressin sivusto. Koitin joitakin SQL -injektioita onnistumatta. Etsin tämän jälkeen vihjeitä mahdollisesta hyökkäystavasta ja löysin Arun Kumarin artikkelin hyökkäyksestä. Koitin suorittaa kyseisen toimnepiteet samassa järjestyksessä, mutta minulle tuli ongelmaksi toteuttaa operaatiot wpscan -ohjelman kanssa. Jokainen kerta kun yritin suorittaa kyseisen komennon, niiin kyseinen ohjelma antoi virheilmoitukseksi <b>Couldn't resolve host name</b>. 
+				</p>
+				<img src="img/osa02_07.png" />
+					
+				<p>
+					Kun yhdistin Kalin LAN-verkkoon ja kokeilin komentoa uudestaan, niin tämän jälkeen komento <b>wpscan --url http://192.168.56.103 --enumerate u</b> toimi. Ilmeisesti wpscan käyttää ulkoista tietokantaa suorittaessaan brute-force hyökkäystä tietokantaan, koska se ei pysty suorittamaan komentoa ilman LAN-yhteyttä. 
+				</p>
+				<img src="img/osa02_08.png" />
+				<p>
+					Tosin tämän jälkeen hukkasin tämän hyökkäyksen ajatuksen, koska en löytänyt sellaista kohtaa mihin Arun Kumar viittasi tekstissään. Löysin kylläkin kyseisen 404.php virheilmoituksen, mutta se ei sisältänyt kyseisiä tekstikohtia. Toisaalta jos pääset vapaasti muokkaamaan Wordpressin html-koodia, niin käyttäjä tosiaan pystyy tekemään aukon järjestelmään, mikäli järjestelmä ei mitenkään rajoita sitä, millaista html koodia saa olla käytössä.            
+                </p>
+                
+                <div class="lahteet">
+                    <h2>Lähteet</h2>
+                    <p>Yeah Hub, 2018. Find Virtual Machine IP Through Kali Linux – 3 Methods. Luettavissa: <a href="https://www.yeahhub.com/find-virtual-machine-ip-kali-linux-3-methods/">https://www.yeahhub.com/find-virtual-machine-ip-kali-linux-3-methods/</a>. Luettu 11.4.2021.</p>
+                    <p>Kumar, A. 2021. Tryhackme Cold Box -Easy walkthrough. Luettavissa: <a href="https://infosecwriteups.com/tryhackme-cold-box-easy-walkthrough-7181ab3f8b96">https://infosecwriteups.com/tryhackme-cold-box-easy-walkthrough-7181ab3f8b96</a>. Luettu: 11.4.2021. </p>
+                </div>
+
+            </div>
+
+
+
+
+
+
+    
+        </div>
+
+    </div>
+
+</body>
+</html>
