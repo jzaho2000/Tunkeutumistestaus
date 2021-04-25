@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+<title>Tunkeutumistestaus -kurssin raportti</title>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" /> 
+<link rel="stylesheet" href="styles/styles.css">
+<script type="text/javascript" src="js/main.js"></script>
+</head>
+<body>
+    <div class="shadow">
+		<div class="dropdown">
+			<button onclick="showMenu()" class="dropbutton" >Navigointi</button>
+			<div id="dropDownNav" class="dropdown-content">
+				<a href="index.html">Pääsivu</a></li>
+				<a href="Tunkeutumistestaus_osa01.html">Harjoitus 1</a>
+				<a href="Tunkeutumistestaus_osa02.html">Harjoitus 2</a>
+				<a href="Tunkeutumistestaus_osa03.html">Harjoitus 3</a>
+				<a href="Tunkeutumistestaus_osa04.html">Harjoitus 4</a>
+			</div>
+		</div>
+		
+
+        <div class="content">
+            
+            <h1 class="hotsikko">Tunkeutumistestaus -kurssin raportti, osa 4</h1>
+
+            <div class="kuvaus">
+                <p>Tämä on tehtäväraportti Haaga-Helian Tunkeutumistestaus -kurssilta, missä tarkastelemme erilaisten järjestelmien tietoturvallisuutta ja
+                tarkastellaan miten hakkerit näkevät järjestelmän pyrkiessään tunkeutumaan niihin. </p>
+
+                <p><b>Raportin tekijä: Jyrki Aho</b></p>
+            </div>
+
+
+            <div class="tehtava">
+                <h1>Nmapin toimintoja</h1>
+                <p>
+                    Luin hieman materiaalia nmapin toiminnasta ja kirjasin itselleni ylös alla olevat parametrit tätä tehtävää ja 
+                    jatkoa varten. 
+               </p>
+               <p>  <b>Nmapin parametrit</b>
+                    <table>
+                    
+                    <tr>
+                    	<th><b>-sL</b></th>
+                    	<td>
+                    		Skannaa ja muodostaa listan yhteyksistä, ilman että nmap lähettää paketteja palvelimelle.
+                    	</td>
+                    </tr>
+                    
+                    
+                    <tr>
+                    	<th><b>-sS</b></th>
+                    	<td>
+                    		Tämä parametri vastaa TCP SYN Skannausta, joka kykenee skannaamaan 1000 porttia sekunnissa. 
+                    		Se on myös nopea ja huomaamattomampi, koska se ei koskaan muodosta TCP yhteyttä loppuun saakka.
+                    		 Se myös kerttoo missä tilassa portit ovat. Eli ovatko ne <i>open</b>, <b>closed</b> vai 
+                    		 <b>filtered</b> tiloissa. 
+                    	</td>
+                    </tr>
+                    <tr>
+                    	<th><b>-sT</b></th>
+                    	<td>
+                    		Oletusarvoinen TCP yhteys skannaus, kun TCP SYN skannaus ei ole vaihtoehto. Tätä vaihtoehtoa käytetään
+                    		mikäli skannausta suorittavalla henkilöllä ei ole <b>raw packet privledges</b>. 
+                    	</td>
+                    </tr>
+                    
+                    <tr>
+                    	<th><b>-sU</b></th>
+                    	<td>
+                    		Tämän avulla nmap suorittaa UDP skannauksen. Vaikka TCP on yleisin yhteysmuoto internetissä, niin jotkin
+                    		palvelut ovat saatavilla UDP muodossa, kuten esimerkiksi DNS, SNMP ja DHCP, jotka ovat kolme yleisintä 
+                    		UDP-palveluja.UDP skannaus on hitaampi ja vaikeampi kuin TCP skannaus, minkä vuoksi jotkut 
+                    		turvallisuusauditoijat eivät testaa näitä portteja. Hakkerit hyödyntävät tätä tietoa pyrkiessään 
+                    		tunkeutumaan järjestelmiin.
+                    	</td>
+                    </tr>
+                    
+                    
+                    <tr>
+                    	<th><b>-oA [filename]</b></th>
+                    	<td>
+                    		Vie nmapin skannauksen tulokset filename nimiseen tiedostoon 
+                    	</td>
+                    </tr>
+                    
+                    
+                    <tr>
+                    	<th><b>-sV</b></th>
+                    	<td>
+                    		Tämän parametrin avulla kerrotaan nmapille, että halutaan selvittää käytössä olevat versiot.
+                    	</td>
+                    </tr>
+                    
+                    
+                    
+                    <tr>
+                    	<th><b>-p [portit]</b></th>
+                    	<td>
+                    		Tämän parametrin avulla määritellään mitkä portit käydään läpi. Esimerkiksi komento <b>-p-</b> tekee
+                    		sen, että nmap käy kaikki portit 0-65535 läpi.
+                    	</td>
+                    </tr>
+                    
+                    
+                    
+                    <tr>
+                    	<th><b>--top-ports [luku]</b></th>
+                    	<td>
+                    		Tämän parametrin avulla kerrotaan nmapille, että halutaan käydä läpi top [luku] suosituinta palvelua 
+                    		läpi ja katsoa missä tilassa ne ovat.
+                    	</td>
+                    </tr>
+                    
+                    
+ 
+                    
+                    
+                    </table>
+                    
+                </p>
+                
+                <p>
+                	Meinasin aluksi testata nmapia ja wiresharkia Hachtheboxin koneeseen, mutta totesin että liikennettä oli hieman liikaa, jotta saisi varmasti oikeansuuntaisia vastauksia. Tästä syystä irroitin Kalin verkosta ja avasin metasploit2 palvelimen testiserveriksi. Suoritin aluksi komennon <b>sudo nmap -sT -p80 192.168.56.101</b>, jolloin nmap testaa ainoastaan porttia 80 IP-osoitteessa 182,168.56.101. Tällöin Wireshark kaappaa seuraavanlaisen liikenteen. 
+     		</p>
+     		
+     		<img src="img/osa04_01.png" />
+     		
+     		<p>
+     			Jos oikein tulkitsen tätä liikennettä, niin nmap lähettää normaalin paketin kyseiseen osoitteeseen, minkä jälkeen nmap jäi odottamaan TCP yhteyden muodostumista.  
+                </p>
+                
+                <p>
+                	Kokeilen tämän jälkeen TCP SYN skannausta kohti metasploit2:sta. Tällöin suoritan komennon <b>sudo nmap -sT -p80 192.168.56.101</b>. Tällöin saadaan napattua seuraavanlainen liikenne.
+                </p>
+                
+              	<img src="img/osa04_02.png" />
+              	
+              	<p>
+              		Tällöin dataa kulkee hieman vähemmän kuin tavallisella TCP skannauksella, mikä johtuu ilmeisesti siitä ettei nmap jää odottamaan TCP yhteyden muodostamista.
+              	</p>
+              	
+              	<p>
+              		Suoritin ping sweepin paramertilla <b>-sn</b>, mutta jostakin syystä tämä komento ei näyttänyt toimivan. Tai ainakaan se ei jättänyt Wiresharkkiin merkittävää jälkeä. Näin vain että ohjelma suoritti whois toiminnon kyseiselle osoitteelle ja lopetti sen siihen. Kokeilin tämän jälkeen tuota <b>-Pn</b> parametria ja totesin sen täyttävän täysin Wiresharkin. Ymmärrän hyvin, miksi tätä hakua ei kannata käyttää. 
+              	</p>
+                
+                
+                <p>
+                	Suoritin tämän jälkeen version selvittämisen portista 80 komennolla <b>sudo nmap -sV -p80 192.168.56.101</b>. 
+                	Yllätyin hieman kuinka monta komentoa nmapin piti suorittaa, jotta se sai selvitettyä mikä palvelin versio 
+                	palvelimella on käytössä kyseisestä palvelusta. Ilmeisesti OK viestit, virheviestit ja toimivat hakukäskyt 
+                	voivat paljastaa, mikä palvlelin ja sen versio on käytössä kyseisellä palvelimella. 
+                </p>
+                
+                <img src="img/osa04_03.png" />
+                
+                
+
+                <p>
+                    Porttien valintaa kokeilinkin jo aikaisemman testin aikana, kun halusin rajata Websharkin tuottamaa dataa yksittäiseksi esimerkiksi, jotta sen tulkitseminen olisi helpompaa. Kokeilin verkkomaskin toimintaa suljetussa virtuaaliverkossa komennolla <b>sudo nmap -sS -p80 192.168.56.0/24</b>, jolloin sain seuraavanlaiset tuloksen.
+                </p>
+                
+                <img src="img/osa04_04.png" />
+                
+                <p>
+                	Tutkin asiaa vähän tarkemmin ja sain selvitettyä, että osoite 100 vastaa virtuaaliympäristön IP-osoitetta, 101 vastaa metasploittia ja 102 on ilmeisesti Kali-käyttöjärjestelmä. Mitään muita koneita ei ole kytkettynä virtuaaliverkossa. Kokeilin useampaa temppua pyrkiessäni selvittämään osoitteen 192.168.56.102 arvoitusta, mutta koska kaikki portit olivat kiinni, niin olettaisin kyseessä olevan Kali käyttöjärjestelmä. Nmap ei tietenkään voi tunnistaa käyttöjärjestelmää, mikäli mikään porteista ei vastaa. 
+                </p>
+                
+                <p>
+                	Tyhjäsin Wiresharkin kokonaan ja koitin nmapata kyseisen kohteen. Wiresharkin viestiliikenne selvästi kohdistui Kaliin itseensä ja viestiliikenne näkyi selvästi kyseisessä ohjelmassa. Löysin Srinivasin artikkelin, missä esiteltiin alkeet lokien analysointia varten mahdollisen hyökkäyksen sattuessa. Tämän perusteella ajoin Kalissa komennot <b>service apache2 start</b> ja <b>service mysql start</b>. Kumpikin komento tarvitsi rootin salasanaa käynnistyäkseen. Kokeilin tämän jälkeen nmapata osoiteen 192.168.56.102. Tällöin nmap pystyi havaitsemaan, että Apache serveri oli päällä portin 80 takana. Samalla nmaps pystyi myös selvittämään mikä Linux Kalissa on käytössä. Se ei kuitenkaan kyennyt selvittämään mikä Linux distro oli käytössä tämän tiedon perusteella. Tein tämän jälkeen seuraavanlaisen html sivun tutkiakseni, kuinka logitiedot tallentuvat.
+                </p>
+                
+                <div class="cscript">
+                	<p>&lt;!DOCTYPE HTML&gt;</p>
+			<p>&lt;html&gt;</p>
+			<p>&lt;head&gt;</p>
+			<p>&lt;title&gt;Testi&lt;/title&gt;</p>
+			<p>&lt;meta charset="UTF-8" /&gt;</p>
+			<p>&lt;/head&gt;</p>
+			<p>&lt;body&gt;</p>
+			<p>&lt;div&gt;</p>
+			<p>&lt;h1&gt;Testi&lt;/h1&gt;</p>
+			<p>&lt;form action="index2.html"&gt;</p>
+			<p>&lt;input type="text" name="textfield_query" /&gt;</p>
+			<p>&lt;input type="submit" value="Lähetä" /&gt;</p>
+			<p>&lt;/form&gt;</p>
+			<p>&lt;/div&gt;</p>
+			<p>&lt;/body&gt;</p>
+			<p>&lt;/html&gt;</p>
+                </div>
+                <p>
+                	Heitin sinne muutaman komennon, jonka jälkeen tutkin <b>/var/log/apache2/access.log</b> tiedostoa <b>cat</b> ja <b>grep</b> komentojen avulla. Tämän jälkeen kokeilin ajaa <b>nmap</b> komennon, minkä jälkeen tarkastelin miten se näkyy näissä lokitiedoissa. Totesin että <b>-sS</b> ei jätä lokiin merkintöjä, mutta versiohausta <b>-sV</b> jää merkintä lokiin.  
+                </p>
+                
+                
+                
+                <div class="lahteet">
+                    <h2>Lähteet</h2>
+                    <p>Gordon L., 2021. Chapter 1. Getting Started with Nmap. Luettavissa: 
+                    <a href="https://nmap.org/book/nmap-overview-and-demos.html">https://nmap.org/book/nmap-overview-and-demos.html</a>.
+                     Luettu: 22.4.2021.</p>
+                    <p>Gordon L., 2021. Chapter 15. Nmap Reference Guide. Luettavissa: 
+                    <a href="https://nmap.org/book/man.html">https://nmap.org/book/man.html</a>. 
+                    Luettu: 22.4.2021.</p>
+                    <p>Karvinen, T., 2021. Penetration Testing Course 2021 Spring. Luettavissa: 
+                    <a href="https://terokarvinen.com/2021/hakkerointi-kurssi-tunkeutumistestaus-ict4tn027-3005/">https://terokarvinen.com/2021/hakkerointi-kurssi-tunkeutumistestaus-ict4tn027-3005/</a>. 
+                    Luettu: 22.4.2021.</p>
+                    <p>Srinivas, 2018. Log Analysis for Web Attacks: A Beginner’s Guide. Luettavissa: 
+                    <a href="https://resources.infosecinstitute.com/topic/log-analysis-web-attacks-beginners-guide/">
+                    https://resources.infosecinstitute.com/topic/log-analysis-web-attacks-beginners-guide/</a>. 
+                    Luettu: 22.4.2021.</p>
+                </div>
+
+            </div>
+
+
+
+
+
+			<div class="tehtava">
+                <h1>UDP skannaus</h1>
+                <p>
+                    
+                    Kuten jo aikaisemmin mainitsin, niin UDP:n kolme yleisintä palveluja ovat DNS, SNMP ja DHCP. UDP skannaus on vaikeaa, koska se on ainoastaan yksisuuntaista. Järjestelmälle on lähetettävä tietynlainen kutsu, joka aktivoi UDP -lähetyksen, minkä jälkeen on kyettävä analysoimaan tämän datan perusteella mikä palvelu ja versio toisessa päässä on. Kun tällaista UDP porttia vastaan lähtee hyökkäämään, niin se ei palauta sellaista tietoa, minkä perusteella hyökkääjä voisi tietää kuinka lähellä murtoa hän on. En löytänyt materiaalista selitystä sille, miksi UDP skannauksen yhteydessä pitäisi käyttää <b>--reason</b> flagia. Ilmeisesti tarkoituksena on havainnoida, miksi mikäkin portti on kiinni ja hyökkääjä voi siten varmistaa silmäillen, onko jokin portti oikeasti kiinni vai voiko sen takana lymytä UDP palvelin. 
+                </p>
+                
+
+                <div class="lahteet">
+                    <h2>Lähteet</h2>
+                    <p>Gordon L., 2021. Chapter 1. Getting Started with Nmap. Luettavissa: 
+                    <a href="https://nmap.org/book/nmap-overview-and-demos.html">https://nmap.org/book/nmap-overview-and-demos.html</a>.
+                     Luettu: 22.4.2021.</p>
+                    <p>Gordon L., 2021. Chapter 15. Nmap Reference Guide. Luettavissa: 
+                    <a href="https://nmap.org/book/man.html">https://nmap.org/book/man.html</a>. 
+                    Luettu: 22.4.2021.</p>
+                   
+                </div>
+
+            </div>
+
+
+
+
+		<div class="tehtava">
+                <h1>Hack the Box</h1>
+                <p>
+                    Sammutin Metsploit2:sen ja yhdistin Kalin takaisin internettiin. Kirjauduin Hack the Boxin järjestelmään ja totesin heidän tehneen joitakin pieniä muutoksia järjestelmiinsä. Järjestelmä ehdotti, että tutustuisin Hack the Boxin järjestelmään ja kokeilisin helpompia kohteita. Valitsin sieltä ensimmäiseksi kohteeksi <b>Archetype</b> koneen. 
+                </p>
+                
+                <img src="osa04_05.png" />
+                
+                <p>
+                	Tarkistin nmapin avulla kyseisen koneen portit. Portti 135 viittaa Exchange palvelimeen. Tälle löytyy joitakin bufferin ylivuotohyökkäyksiä. Porttia 139 käytetään tiedostojen ja tulostimien jakoon. Tämä portti saattaa vuotaa tietoja ja siihen on ehkä mahdollista hyökätä sopivasti muodostetulla kysymyksellä. Portti 445 on Lync Serverin portti ja se pitäisi ehdottomasti olla palomuurilla suojattu. Näiden kolmen portin aukiolo viittaisi kriittisen RPC haavoittuvuuden olemassaoloon. Nämä portit saisivat olla auki ainoastaan erittäin suojatun palomuurin sisällä ja ne eivät saisi näkyä verkoon. 
+                </p>
+                
+                <img src="img/osa04_06.png" />
+                
+                <p>
+                	Totesin etten oikein vielä mahdollisesti hallitse metasploittia, kun koitin mennä sen avulla sisälle. Löysin kuitenkin Konradin ratkaisut netissä, missä hän tarkasteli kyseistä haavoittuvuutta. Hänen sivuiltaan löysin myös mielenkiintoisen linkin <a href="https://tools.kali.org/information-gathering/smbmap">https://tools.kali.org/information-gathering/smbmap</a>, joka johtaa sivustolle, missä esitellään Kaliin liittyviä työkaluja. Kondradin käyttämien ohjelmien avulla sain poimittua <b>prod.dtsConfig</b>, joka sisälsi jonkinlaisen salasanan. Ilmeisesti tämä backup tiedosto on jäännyt kehitysvaiheessa lojumaan sinne. Siellä olevan salasanan aulla kuitenkin voi yrittää hyökätä järjestelmän kimppuun. Tässä kohtaa en oikein osannut seurata Konradin ajatuksia, mutta olen tyytyväinen että löysin sivuston, missä voi käydä tarkastelemassa Kalissa olevia tai Kaliin asennettavia ohjelmia. Kokeilin paria haavoittuvuustyökalua ajan kuluksi, mutta ne eivät tuottaneet tulosta.  
+                </p>
+                
+                <div class="lahteet">
+                    <h2>Lähteet</h2>
+                    <p>Konrad, 2020.Hack The Box “Archetype” Writeup. Luettavissa: <a href="https://secinject.wordpress.com/2020/10/20/hack-the-box-archetype-writeup/">https://secinject.wordpress.com/2020/10/20/hack-the-box-archetype-writeup/</a>. Luettu: 23.4.2021.</p>
+                    <p>Speed Guide.net, 2021. Port 135 Details. Luettavissa: <a href="https://www.speedguide.net/port.php?port=135">https://www.speedguide.net/port.php?port=135</a>. Luettu: 23.4.2021.</p>
+                    <p>Speed Guide.net, 2021. Port 139 Details. Luettavissa: <a href="https://www.speedguide.net/port.php?port=139">https://www.speedguide.net/port.php?port=139</a>. Luettu: 23.4.2021.</p>
+                    <p>Speed Guide.net, 2021. Port 445 Details. Luettavissa: <a href="https://www.speedguide.net/port.php?port=445">https://www.speedguide.net/port.php?port=445</a>. Luettu: 23.4.2021.</p>
+                    
+                </div>
+
+            </div>
+
+
+
+
+
+
+
+     
+
+
+
+
+
+
+    
+        </div>
+
+    </div>
+
+</body>
+</html>

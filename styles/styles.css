@@ -86,10 +86,40 @@ br {
 }
 
 .cscript {
+    line-height: 1em;
+    padding: 0px;
     margin-top: 8px;
     margin-bottom: 8px;
     font-weight: bold;
     font-style: italic;
 }
+.cscript p {
+    display:block;
+    margin: 0px;
+    padding-left: 20px;
+    padding-bottom: 10px;
+    line-height: 10px;
+}
+
+table {
+	margin-left: 15px;
+	border: none; 
+}
+
+tr {
+	border:none;
+}
 
 
+th {
+	padding-right: 20px;
+}
+
+td {
+	padding-left: 10px;
+}
+
+img {
+	max-width: 95%;
+	height: auto;
+}
