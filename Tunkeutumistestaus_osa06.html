@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+<title>Tunkeutumistestaus -kurssin raportti</title>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" /> 
+<link rel="stylesheet" href="styles/styles.css">
+<script type="text/javascript" src="js/main.js"></script>
+</head>
+<body>
+    <div class="shadow">
+		<div class="dropdown">
+			<button onclick="showMenu()" class="dropbutton" >Navigointi</button>
+			<div id="dropDownNav" class="dropdown-content">
+				<a href="index.html">Pääsivu</a></li>
+				<a href="Tunkeutumistestaus_osa01.html">Harjoitus 1</a>
+				<a href="Tunkeutumistestaus_osa02.html">Harjoitus 2</a>
+				<a href="Tunkeutumistestaus_osa03.html">Harjoitus 3</a>
+				<a href="Tunkeutumistestaus_osa04.html">Harjoitus 4</a>
+				<a href="Tunkeutumistestaus_osa05.html">Harjoitus 5</a>
+				<a href="Tunkeutumistestaus_osa06.html">Harjoitus 6</a>
+			</div>
+		</div>
+		
+
+        <div class="content">
+            
+            <h1 class="hotsikko">Tunkeutumistestaus -kurssin raportti, osa 6</h1>
+
+            <div class="kuvaus">
+                <p>Tämä on tehtäväraportti Haaga-Helian Tunkeutumistestaus -kurssilta, missä tarkastelemme erilaisten järjestelmien tietoturvallisuutta ja
+                tarkastellaan miten hakkerit näkevät järjestelmän pyrkiessään tunkeutumaan niihin. </p>
+
+                <p><b>Raportin tekijä: Jyrki Aho</b></p>
+            </div>
+
+
+
+
+	    <div class="tehtava">
+                <h1></h1>
+                <p>
+                    
+               </p>
+           	
+               
+                <div class="lahteet">
+                    <h2>Lähteet</h2>
+                    <p></p>
+                    
+                </div>
+
+            </div>
+            
+            
+      	   <div class="tehtava">
+                <h1>Hakkerointi käyttäjän tunnisteiden avulla (Hacking User Credentials)</h1>
+                <p>
+                    Santosin ja kumppaneiden mukaan, authentikoinnin murtaminen on eräs yleisimpiä tapoja päästä tunkeutumaan järjestelmiin. Alla on esitetty omat lyhyet muistiinpanoni heidän opetusvideoon liittyen.  
+                  	
+               </p>
+               
+               <p>
+	               <h2>Uhat</h2>
+	               <ul>
+               	  <li>Heikot salasanat</li>
+               	  <li>Saman salasanan käyttäminen eri palveluissa</li>
+               	      <ul>
+               		  <li>erikoistapauksissa sama salasana kaikissa palveluissa</li>
+               	      </ul>
+               	  <li>Suojaamaton nettiyhteys kahvilassa (joku voi kaapata salasanan)</li>
+               	  <li>verkon kaappaminen piilotetun laitteen avulla</li>
+               	  <li>Brute force hyökkäys suoraan webbisivuille (Medusa, THC-Hydra, Brutus, Metasploit)</li>
+               	  <li>Dirbuster löytää piilotettuja tiedostoja ja hakemistoja webbisivuilta</li>
+               	  <li>admin salasana on kultaa hakkereilla, koska mahdollistaa pääsyn kaikkialle</li>
+
+               	  <li>Heikot algoritmit (MD5, SHA1, SHA2)</li>
+              		  <li>kasvavat laskentatehot, näytönohjaimet ja sateenkaarihyökkäykset</li>
+                       </ul>
+               
+               
+               	<h2>Suojautuminen</h2>	
+                    	<ul>
+                  	    <li>kaksivaiheinen tunnistautuminen</li>
+                  	    <li>oletussalasanojen muuttaminen</li>
+                  	    <li>Käytä vahvoja salasanoja</li>
+              		    <li>Salasanojen suojaus hashing -funktioiden ja suolauksen avulla.</li>
+              		    <li>hash on yksisuuntainen funktio, josta ei voida johtaa alkuperäistä salasanaa </li>
+              		       <ul>
+              		           <li>pelkkä hash -funktion käyttö ei suojaa salasanaa</li>
+              		           <li>suolaus takaa sen, että salasanan murtaminen brute forcella vaikeutuu hieman ja jokaisella kerralla
+              		     tuotetaan erilainen hash -arvo.</li>
+              			</ul> 	  
+               	  <li>käytä serifikoitniin pohjautuvia tunnistaumispalveluja</li>
+               	  <li>käytä parempia satunnaisalgoritmeja</li>
+              	         </ul>
+              		
+                  	
+                  	
+                  	
+               </p>
+           	
+           	
+               
+                <div class="lahteet">
+                    <h2>Lähteet</h2>
+                    <p>Santos et al, 2017. Security Penetration Testing - The Art of Hacking Series LiveLessons: Lesson 6: Hacking User Credentials. Katsottavissa: <a href="https://learning.oreilly.com/videos/security-penetration-testing/9780134833989/9780134833989-sptt_00_06_00_00">https://learning.oreilly.com/videos/security-penetration-testing/9780134833989/9780134833989-sptt_00_06_00_00</a>. Katsottu 6.5.2021.</p>
+                    
+                </div>
+
+            </div>
+            
+            
+            <div class="tehtava">
+                <h1>Hashattujen salasanojen murtaminen</h1>
+                <p>
+                    Koska MD5 oli niin helppoa ja nopeaa murtaa,niin ajattelin testata murtaa SHA256 salasanoja. Ensimmäiseksi salasanaksi valitsin <b>qwerty123</b>, koska oletan sen olevan erittäin helpon salasanan. Toiskesi salasanaksi valitsin <b>yellow17</b>, koska se sijaitsee hyvin keskellä rockyou.txt -tiedostoa. Kolmanneksi ja neljänneksi salasanoiksi valitsin kokeilumielessä seuraavat <b>ääää</b> ja <b>Th1s5asswOr7</b>. En tiedä toimivatko ääkköset salasanan purkuohjelmissa ja oletan ettei viimeisintä salasanaa ole listalla. Taistelin hieman hashcatin toiminnallisuuden vuoksi yrittäen saada sen ratkaisemaan näitä salauksia. Yritin aluksi salata salasanat käyttämällä sha256sum -ohjelmaa salaamiseen, mutta hashcat herjasi tätä salausta jostakin syystä. Lopulta päätin käyttää salauksessa Online Toolsin SHA256 salausta, jonka hashcat hyväksyi. Minulla oli silti hieman ongelmia hashcatin parametrien vuoksi, minkä vuoksi katselin Santosin ja kumppaneiden videon ja sain lopulta hashcatin toimimaan, kun lisäsin parametrin <b>-O</b>:n, joka ratkoo salauksia ilman näytönohjaimen käyttöä. Tämän parametrin lisäys aiheutti sen, että Hashcat ryhtyi ratkomaan samalla tavalla salasanoja, kuin videolla näytettiin. Totesin rockyou salasanojen purkamisen olevan äärimmäisenhidas prosessi virturaalikoneella, jossa ei ole näytönohjainta käytössä. Tästä johtuen tein käsin paljon lyhyemmän tiedoston ja kokeilin sanakirja hyökkäystä sen avulla. Komennolla <b>hashcat -O -m 1400 hashed_passwords-txt -a 3 dict.txt --potfile-path cracked.pot</b>, niin salasanojen murtaminen onnistui leikiten. Tosin oikeassa elämässä tämä algoritmi saisi pyöriä hyvinkin pitkään, ellei sitä saada suoritettua tehokkaammalla koneella.
+               </p>
+           	
+           	<img src="img/osa06_01.png" />
+           	
+               
+                <div class="lahteet">
+                    <h2>Lähteet</h2>
+                    <p>Online Tools, 2021. SHA256. Luettavissa: <a href="https://emn178.github.io/online-tools/sha256.html">https://emn178.github.io/online-tools/sha256.html</a>. Luettu: 6.5.2021.</p>
+                    <p>Santos et al, 2017. Security Penetration Testing - The Art of Hacking Series LiveLessons: Lesson 6: Hacking User Credentials. Katsottavissa: <a href="https://learning.oreilly.com/videos/security-penetration-testing/9780134833989/9780134833989-sptt_00_06_00_00">https://learning.oreilly.com/videos/security-penetration-testing/9780134833989/9780134833989-sptt_00_06_00_00</a>. Katsottu 6.5.2021.</p>
+                    
+                </div>
+
+            </div>
+            
+            
+            
+            <div class="tehtava">
+                <h1>Salasanalistan teko ja hyökkäys</h1>
+                <p>
+                    Muistelin että edellisen tunnin aikana eräs henkilö oli tehnyt oman salasanalistan jonkin ohjelman avulla, mutta en muistanut ohjelman nimeä. Tämän vuoksi etsin internetistä oikeaa ohjelmaa tähän ja löysin sellaisen ohjelman kuin  CeWL, joka vaikutti samanlaiselta mitä tunnilla oltiin esitelty. Koska muistelin että tämä ohjelma saattaa karata nettiin keräämään tietoja, niin katkaisin koneestani tilapäisesit yhteyden, ennen kuin laitoin ohjelman tutkimaan metasploitin sivua. Suoritin komennon <b>cewl -d [syvyys] -w metasploit_dictionary_[syvyys].dic http://192.168.56.101</b> kolmella eri syvyysarvolla. Kun asetin syvyyden suuruudeksi yksi, niin ohjelma löysi 365 sanaa. Syvyyys kaksi tuotti 5159 ja syvyys kolme tuotti 5567 sanaa. Koska sanoja tuotettiin näin vähän syvyyksien lisääntyessä, niin ohjelma seuraa tuottamiansa sanoja ja pyrkii välttämään duplikaattisanojen lisäämistä listaan. 
+               </p>
+               
+               <img src="img/osa06_02.png" />
+           	
+           	<p>
+           		Sanakirjahyökkäyksiä voidaan käyttää apuna murtautuessa tietojärjestelmiin. Usein henkilöt valitsevat hellpoja salasanoja, kuten esimerkiksi <b>Toukokuu21</b> ja tätä tietoa voidaan käyttää hyödyksi. Suurin ongelma tässä hyökkäyksessä on kuitenkin se, ketkä tahot käyttävät näin helppoja salasanoja? Löysin netistä null byten artikkelin hyökkäystavasta, jossa käytetään apuna <b>Burp Suitea</b> ja <b>Hydraa</b>. Artikkelissa selitettiin hyvin,miten Burpin avulla kaapataan tunnistautumisviesti.</p>
+           	
+           	<img src="img/osa06_03.png" />
+           	
+               <p>
+               Tämän perusteellahyökkääjä tietää minkä muotoista dataa järjestelmä käyttää tunnistautumisessa. Tämän perusteella muotoillaan hydran hyökkäyskäsku oikean muotoiseksi, minkä jälkeen suoritetaaan hyökkäys. Itse valitsin yleisimmät rootin tunnukset ja itse tehdyn kirjaston hykkäyksen pohjana. Syitä tähän valintaan oli kaksi. Ensimmäinen oli se, että saisin pidettyä hyökkäyksen lyhyenä kun ei ole käytössä laajoja kirjastoja ja toinen syy on metasploitin rootin oletussalasana. Oletan että sivustolla mahdollisesti esiintyi kyseinen tunnus ja sitä kautta mahdollisesti voisin murtautua sisälle. Toisaalta joudun kyllä keskeyttämään jossakin kohtaa tämän hyökkäyksen, koska sen oletuskesto on noin 95 tuntia. Peruutin hyökkäyksen ja koitin hyökkäystä vileäkin pienemmällä itse tehdyllä kirjastolla, missä oli vain himan yli 300 sanaa. Oli hieman yllättävää, että tämänkin hyökkäyksen kesto tulisi olemaan 6 tuntia.
+           	</p>
+           	
+           	<img src="img/osa06_04.png" />
+               
+                <div class="lahteet">
+                    <h2>Lähteet</h2>
+                    <p>Null Byte, 2020. Use Wordlister to Create Custom Password Combinations for Cracking. Luettavissa: <a href="https://null-byte.wonderhowto.com/how-to/use-wordlister-create-custom-password-combinations-for-cracking-0206006/">https://null-byte.wonderhowto.com/how-to/use-wordlister-create-custom-password-combinations-for-cracking-0206006/</a>. Luettu: 6.5.2021.</p>
+                    <p>Null Byte, 2016. How to Crack Online Web Form Passwords with THC-Hydra & Burp Suite. <a href="https://null-byte.wonderhowto.com/how-to/hack-like-pro-crack-online-web-form-passwords-with-thc-hydra-burp-suite-0160643/">https://null-byte.wonderhowto.com/how-to/hack-like-pro-crack-online-web-form-passwords-with-thc-hydra-burp-suite-0160643/</a>. Luettu: 6.5.2021.
+                    
+                    
+               
+                    
+                    </p>
+                </div>
+
+            </div>
+            
+            
+            
+            <div class="tehtava">
+                <h1>Tiedoston salasanan purku</h1>
+                <p>
+                    Salasin Kalissa zip-tiedoston komennolla <b>zip -9 -e secure.zip metsploit_dictionary_3.dic</b>. Valitsin parametreiksi juuri -9 ja -e, koska halusin että tiedosto olisi mahdollisimman tehokkaasti paketoitu ja se olisi kaiken lisäksi kryptattu. Tällöin salauksen purun ei pitäisi olla helppoa ilman tehokkaita apuvälineitä. Tein tällä paketilla kaksi salaustiedostoa, joista toisen salasana oli <b>unto</b> ja toisen <b>Jupiter</b>. Latasin Kaliin <b>fcrackzip</b>, jonka avulla ajattelin murtaa kyseisen salatun tiedoston. Kokeilin ensimmäisellä kerralla murtamista komennolla <b>fcrackzip -b -l 4-4 secure.zip</b>. Totesin tämän käyvän kaikki mahdolliset kompinaatiot läpi, mutta ohjelma ei silti onnistunut murtamaan ensimmäisen tiedoston salausta. Kokeilin vielä pari kertaa murtamista kunnes totesin kellon olevan paljon ja menin nukkumaan. Toisella kertaa luin tarkasti fcrackzipin help osion läpi ja hoksasin, että en ollut käyttänyt <b>-u</b> parametria murtoyrityksessä. Koska ohjelma ei automaatisesti yritä murtaa tiedostoa, niin kyseinen ohjelma ei voinut tietää oliko se löytänyt oikean salasanan. Kokeilin toisella kertaa ajaa komennon <b>fcrackzip -b -u -l 4-4 secure.zip</b> ja tällä kertaa onnistuin murtamaan tiedoston salauksen. 
+               </p>
+           	
+           	<img src="img/osa06_05.png" />
+           	
+           	<p>
+           	Tämän jälkeen lähdin murtamaan tätä haasteellisempaa salasanaa. Ensimmäinen murtui helposti koska salasana kombinaatioita ei ole paljon neljän merkin mittaisille salasanoille. Koska tiedän fcrackzip lähtee hyökkäämään tiedostoa kohti kuuden merkin mittaisilla salasanoilla, niin tiedän sillä kestävän jonkin aikaa, ennen kuin se löytää kyseisen salasanan. Tällä välin kokeilin <b>zip2john</b> työkalua, jonka help osio vaikutti mielenkiintoiselta salasanan purkausohjelmistoksi. Brownin ohjeita seuraamalla havaitsin, että kyseinen ohjelma poimiikin zip-tiedostosta olennaisen tiedon, jonka <b>john</b> -niminn ohjelma pyrkii murtamaan. Kokeilin suorittaa esitettyä komentosarjaa ja john pystyi purkamaan zip-tiedoston salauksen hetkessä, kun taas fcrackzip jatkaa edelleen murtoyrityksiänsä.
+           	</p>
+               
+               <img src="img/osa06_06.png" />
+               
+               <p>
+               Olisin tässä voinut näyttää miten esimerkiksi murtaudutaan windowsin suojattuihin MS Office -tiedostoihin, mutta niiden suojaus ei ollut kovinkaan kummoinen ainakaan pari vuotta sitten. Silloin riitti, että Office tiedostosta etsi oikean kohdan ja poisti tietyn pituisen merkkijonon, niin tiedoston suojaus oltiin onnistuttu purkamaan. En usko että suojausta on parannettu sen jälkeen, koska pääosin salasanoilla ei pyritä suojaamaan itse tiedostoa, vaan tiedostoa pyritään suojaamaan mahdollisilta muutoksilta. Toisaalta hakkerin ei ehkä ole syytä muuttaa näiden tiedostojen sisältöä, ellei hakkerin tarkoituksena ole tavoitella tiettyä etua, minkä tiedostossa tehty muutos voisi auttaa. Havaitsin myös googlettamalla, että myös sellainen ohjelma löytyy Kalille kuin <b>office2john</b>, mitä voi myös käyttää apuna hyökättäessä Officen tiedostojen kimppuun. Ensimmäisessä tavassa salasanaa ei enää kyselty, kun se oltiin poistettu, niin tämä jälkimmäinen tapa jättää salasanan paikalleen, jolloin toinen osapuoli ei voi tietää että kyseinen salasana ollaan onnistuttu murtamaan. Ajanpuutteen vuoksi en ehdi tekemään HelSec Twitchistä bulletteja tähän tehtävään, mutta ajattelin kuitenkin käydä hieman kuuntelemassa heidän esityksiänsä heti huomenaamulla. Raportti on nyt mielestäni saatu koottua kasaan, mutta fcrackzip ei ole edelleenkään onnistunut murtamaan Jupiter -salasanaa. 
+               </p>
+               
+                <div class="lahteet">
+                    <h2>Lähteet</h2>
+                    <p>Brown, K. 2021. How to crack zip password on Kali Linux. Linux Config.org. Luettavissa: <a href="https://linuxconfig.org/how-to-crack-zip-password-on-kali-linux">https://linuxconfig.org/how-to-crack-zip-password-on-kali-linux</a>. Luettu: 9.5.2021.</p>
+                    
+                </div>
+
+            </div>
+            
+    
+            
+
+ 
+ 
+
+
+    
+        </div>
+
+    </div>
+
+</body>
+</html>
